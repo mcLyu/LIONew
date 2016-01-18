@@ -65,6 +65,19 @@ namespace MasterLIO
             this.length = text.Length;
         }
 
+        public Exercise(String name, String text, List<KeyboardArea> areas, int maxErrors, int maxTime,int level)
+        {
+            this.name = name;
+            this.text = text;
+            this.areas = areas;
+            this.maxErrors = maxErrors;
+            this.level = areas.Capacity; // уровень = количеству заюзаных зон
+            this.length = text.Length;
+            this.maxTime = maxTime;
+            this.level = level;
+        }
+
+
         public Exercise(int id, String name, String text, List<KeyboardArea> areas, int maxErrors, int maxTime)
         {
             this.id = id;
@@ -77,7 +90,7 @@ namespace MasterLIO
             this.length = text.Length;
         }
 
-        public String getAreasAsString()
+        public static String getAreasAsString(List<KeyboardArea> areas)
         {
             String stringAreas = "";
             foreach (KeyboardArea area in areas)
@@ -115,5 +128,5 @@ namespace MasterLIO
         }
     }
 
-    enum KeyboardArea { ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE }//девять зон клавиатуры
+    public enum KeyboardArea { ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE }//девять зон клавиатуры
 }

@@ -12,6 +12,7 @@ namespace MasterLIO.Forms
 {
     public partial class CreateExercise : Form
     {
+
         public CreateExercise()
         {
             InitializeComponent();
@@ -22,6 +23,8 @@ namespace MasterLIO.Forms
             if ((textBox1.Text != "")
                 && (areasTextBox.Text!=""))
             {
+                textBox1.BackColor = Color.GreenYellow;
+                areasTextBox.BackColor = Color.GreenYellow;
                 richTextBox1.ReadOnly = false;
                 richTextBox1.BackColor = Color.White;
             }
@@ -29,31 +32,19 @@ namespace MasterLIO.Forms
 
         private void selectAreaButton_Click(object sender, EventArgs e)
         {
-            List<Boolean> areasList = new List<Boolean>();
+            List<KeyboardArea> areasList = new List<KeyboardArea>();
             Form f = new SelectAreaForm(ref areasList);
             f.ShowDialog();
 
-            String areas = "";
-            int areasCount = 0;
 
-            for (int i = 0; i < areasList.Count; i++)
-            {
-                int realNum = i + 1;
-                if (areasList[i] == true)
-                {
-                    areas += i + " ";
-                    areasCount++;
-                }
-            }
-
-            areasTextBox.Text = areas;
+            areasTextBox.Text = Exercise.getAreasAsString(areasList);
             textBox4.Text = areasList.Count.ToString();
 
             areasTextBox.BackColor = Color.GreenYellow;
 
             if (textBox1.Text == "")
             {
-                List<Exercise> exercises = DBUtils.LoadExercises(areasCount);
+                List<Exercise> exercises = DBUtils.LoadExercises(areasList.Count);
                 int maxnum = 0;
                 int num;
                 foreach (Exercise exercise in exercises)
@@ -77,6 +68,41 @@ namespace MasterLIO.Forms
                 textBox1.BackColor = Color.GreenYellow;
 
             validateAll();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openFileDialog1 = new OpenFileDialog() { Filter = "Файлы упражнений(*.exercise)|*.exercise" };
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox3.Text = openFileDialog1.FileName;
+                string[] lines = System.IO.File.ReadAllLines(openFileDialog1.FileName);
+                for (int i = 0; i < lines.Length;i++ )
+                {
+                    lines[i] = lines[i].Substring(lines[i].IndexOf('=')+1);
+                }
+                textBox1.Text = lines[0];
+                richTextBox1.Text = lines[1];
+                textBox4.Text = lines[2];
+                areasTextBox.Text = lines[3];
+                numericUpDown3.Value = Convert.ToDecimal(lines[4]);
+                numericUpDown2.Value = Convert.ToDecimal(lines[5]);
+            }
+            validateAll();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            String name = textBox1.Text;
+            String text = richTextBox1.Text;
+            int maxErrors = (int) numericUpDown2.Value;
+            int maxTime = (int) numericUpDown3.Value;
+            List<KeyboardArea> areas = Exercise.getAreasList(areasTextBox.Text);
+            int level = Convert.ToInt32(textBox4.Text);
+
+            Exercise exercise = new Exercise(name,text,areas,maxErrors,maxTime,level);
+            DBUtils.SaveExercise(exercise);
         }
     }
 }

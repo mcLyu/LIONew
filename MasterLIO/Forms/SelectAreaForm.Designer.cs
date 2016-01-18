@@ -160,7 +160,7 @@
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(38, 21);
             this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "2";
+            this.checkBox1.Text = "1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // SelectAreaForm

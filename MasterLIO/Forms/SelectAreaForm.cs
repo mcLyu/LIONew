@@ -15,12 +15,12 @@ namespace MasterLIO.Forms
     {
         Graphics graph;
         List<Point> points;
-        List<Boolean> zonePicked;
+        List<KeyboardArea> areasList;
 
-        public SelectAreaForm(ref List<Boolean> areasList)
+        public SelectAreaForm(ref List<KeyboardArea> areasList)
         {
             InitializeComponent();
-            this.zonePicked = areasList;
+            this.areasList = areasList;
             points = new List<Point>();
             graph = pictureBox1.CreateGraphics();
         }
@@ -38,15 +38,15 @@ namespace MasterLIO.Forms
 
         private void acceptButton_Click(object sender, EventArgs e)
         {
-            zonePicked.Add(checkBox1.Checked);
-            zonePicked.Add(checkBox2.Checked);
-            zonePicked.Add(checkBox3.Checked);
-            zonePicked.Add(checkBox4.Checked);
-            zonePicked.Add(checkBox5.Checked);
-            zonePicked.Add(checkBox6.Checked);
-            zonePicked.Add(checkBox7.Checked);
-            zonePicked.Add(checkBox8.Checked);
-            zonePicked.Add(checkBox9.Checked);
+            if (checkBox1.Checked) areasList.Add(KeyboardArea.ONE);
+            if (checkBox2.Checked) areasList.Add(KeyboardArea.TWO);
+            if (checkBox3.Checked) areasList.Add(KeyboardArea.THREE);
+            if (checkBox4.Checked) areasList.Add(KeyboardArea.FOUR);
+            if (checkBox5.Checked) areasList.Add(KeyboardArea.FIVE);
+            if (checkBox6.Checked) areasList.Add(KeyboardArea.SIX);
+            if (checkBox7.Checked) areasList.Add(KeyboardArea.SEVEN);
+            if (checkBox8.Checked) areasList.Add(KeyboardArea.EIGHT);
+            if (checkBox9.Checked) areasList.Add(KeyboardArea.NINE);
             this.Close();
         }
 

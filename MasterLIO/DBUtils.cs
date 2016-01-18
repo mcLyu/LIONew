@@ -124,7 +124,7 @@ namespace MasterLIO
             command.Parameters.Add(new SQLiteParameter("@param2", exercise.maxErrors));
             command.Parameters.Add(new SQLiteParameter("@param3", exercise.name));
             command.Parameters.Add(new SQLiteParameter("@param4", exercise.text));
-            command.Parameters.Add(new SQLiteParameter("@param5", exercise.getAreasAsString()));
+            command.Parameters.Add(new SQLiteParameter("@param5", Exercise.getAreasAsString(exercise.areas)));
             command.Parameters.Add(new SQLiteParameter("@param6", exercise.level));
             command.Parameters.Add(new SQLiteParameter("@param7", exercise_id));
 
