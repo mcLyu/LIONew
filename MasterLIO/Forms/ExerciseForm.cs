@@ -85,7 +85,7 @@ namespace MasterLIO.Forms
                 watch.Reset();
                 Session.CurrentResultInfo = new ExerciseResultInfo(exercise, new DateTime(), stats.Missed, assigment, watch.Elapsed.Seconds);
                 Int32 command = 0;
-                ExeciseResult execiseResult = new ExeciseResult();
+                ExeciseResultForm execiseResult = new ExeciseResultForm();
                 execiseResult.ShowDialog();
                 if( command == 1){
                     clearAll();
@@ -106,9 +106,9 @@ namespace MasterLIO.Forms
                 isRuning = false;
                 Session.CurrentResultInfo = new ExerciseResultInfo(exercise, new DateTime(), stats.Missed, assigment, watch.Elapsed.Seconds);
 
-                ExeciseResult execiseResult = new ExeciseResult();
+                ExeciseResultForm execiseResult = new ExeciseResultForm();
                 execiseResult.ShowDialog();
-                int command = execiseResult.getCommand();
+                int command =  execiseResult.getCommand();
                 execiseResult.Close();
                 if (command == 1)
                 {
