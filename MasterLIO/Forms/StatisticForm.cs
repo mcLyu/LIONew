@@ -34,16 +34,27 @@ namespace MasterLIO.Forms
         private void statisticSearchButton1_Click(object sender, EventArgs e)
         {
             resultsInfo = statistic.getResultsByDate(dateTimePicker1.Value);
-            foreach (ExerciseResultInfo result in resultsInfo)
+            if (resultsInfo != null)
             {
-                String level = result.level.ToString();
-                String exerciseNum = result.exerciseId.ToString().Substring(1);// MAGIC!
-                exerciseNumbercomboBox1.Items.Add("№"+exerciseNum+", ур-нь "+level);
+                exerciseNumbercomboBox1.Items.Clear();
+                exerciseNumbercomboBox1.Text = "";
+                foreach (ExerciseResultInfo result in resultsInfo)
+                {
+                    String level = result.level.ToString();
+                    String exerciseNum = result.exerciseId.ToString().Substring(1);// MAGIC!
+                    exerciseNumbercomboBox1.Items.Add("№" + exerciseNum + ", ур-нь " + level);
+                }
+            }
+            else
+            {
+                exerciseNumbercomboBox1.Items.Clear();
+                exerciseNumbercomboBox1.Text = "";
             }
         }
 
         private void exerciseNumbercomboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            exerciseNumbercomboBox1.Text = "";
             int exerciseNum = Convert.ToInt32(convertToExersiceId(exerciseNumbercomboBox1.SelectedItem.ToString()));
             ExerciseResultInfo currentResultInfo = getResultInfoByNum(exerciseNum);
             errorCounttextBox3.Text = currentResultInfo.errorsCount.ToString();

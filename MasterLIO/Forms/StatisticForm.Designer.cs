@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -105,16 +105,16 @@
             // 
             // statisticChart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.statisticChart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.statisticChart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.statisticChart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.statisticChart1.Legends.Add(legend1);
             this.statisticChart1.Location = new System.Drawing.Point(291, 24);
             this.statisticChart1.Name = "statisticChart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.statisticChart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.statisticChart1.Series.Add(series1);
             this.statisticChart1.Size = new System.Drawing.Size(247, 107);
             this.statisticChart1.TabIndex = 6;
             this.statisticChart1.Text = "chart1";
@@ -123,6 +123,7 @@
             // 
             this.errorCounttextBox3.Location = new System.Drawing.Point(158, 104);
             this.errorCounttextBox3.Name = "errorCounttextBox3";
+            this.errorCounttextBox3.ReadOnly = true;
             this.errorCounttextBox3.Size = new System.Drawing.Size(100, 22);
             this.errorCounttextBox3.TabIndex = 9;
             // 
@@ -130,6 +131,7 @@
             // 
             this.exerciseSpeedtextBox4.Location = new System.Drawing.Point(158, 132);
             this.exerciseSpeedtextBox4.Name = "exerciseSpeedtextBox4";
+            this.exerciseSpeedtextBox4.ReadOnly = true;
             this.exerciseSpeedtextBox4.Size = new System.Drawing.Size(100, 22);
             this.exerciseSpeedtextBox4.TabIndex = 10;
             // 
@@ -137,6 +139,7 @@
             // 
             this.assessmentTextBox5.Location = new System.Drawing.Point(158, 162);
             this.assessmentTextBox5.Name = "assessmentTextBox5";
+            this.assessmentTextBox5.ReadOnly = true;
             this.assessmentTextBox5.Size = new System.Drawing.Size(100, 22);
             this.assessmentTextBox5.TabIndex = 11;
             // 

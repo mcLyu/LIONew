@@ -25,7 +25,7 @@ namespace MasterLIO
             this.errorsCount = errorsCount;
             this.assesment = assesment;
             this.speed = 0;
-            this.level = 0;
+            this.level = Convert.ToInt32(exerciseId.ToString().Substring(0, 1));
             this.spendetTime = 0;
         }
 
@@ -36,7 +36,7 @@ namespace MasterLIO
             this.errorsCount=errorsCount;
             this.assesment = assesment;
             this.speed = speed;
-            this.level = level;
+            this.level = Convert.ToInt32(exerciseId.ToString().Substring(0, 1));
             this.spendetTime = spendetTime;
         }
 
@@ -47,7 +47,7 @@ namespace MasterLIO
             this.errorsCount = errorsCount;
             this.assesment = assesment;
             this.speed = speed;
-            this.level = level;
+            this.level = Convert.ToInt32(exerciseId.ToString().Substring(0,1));
             this.spendetTime = spendetTime;
         }
     }
