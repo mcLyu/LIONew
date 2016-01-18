@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.speed = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.speed);
             this.groupBox1.Controls.Add(this.time);
             this.groupBox1.Controls.Add(this.wrongNumber);
             this.groupBox1.Location = new System.Drawing.Point(15, 51);
@@ -119,6 +121,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // speed
+            // 
+            this.speed.AutoSize = true;
+            this.speed.Location = new System.Drawing.Point(6, 89);
+            this.speed.Name = "speed";
+            this.speed.Size = new System.Drawing.Size(35, 13);
+            this.speed.TabIndex = 5;
+            this.speed.Text = "label2";
+            // 
             // ExeciseResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,5 +160,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label speed;
     }
 }

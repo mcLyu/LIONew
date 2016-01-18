@@ -33,7 +33,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblCorrect = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblMissed = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblTotal = new System.Windows.Forms.ToolStripStatusLabel();
+            this.speed = new System.Windows.Forms.ToolStripStatusLabel();
             this.difficultyProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -49,14 +49,13 @@
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.ForeColor = System.Drawing.Color.Black;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 135;
-            this.listBox1.Location = new System.Drawing.Point(16, 46);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.ItemHeight = 108;
+            this.listBox1.Location = new System.Drawing.Point(12, 37);
             this.listBox1.MultiColumn = true;
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(751, 139);
+            this.listBox1.Size = new System.Drawing.Size(564, 112);
             this.listBox1.TabIndex = 12;
-            this.listBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ExerciseForm_KeyDown);
+            this.listBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBox1_KeyPress);
             // 
             // statusStrip1
             // 
@@ -65,12 +64,11 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblCorrect,
             this.lblMissed,
-            this.lblTotal,
+            this.speed,
             this.difficultyProgressBar});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(791, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(585, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
@@ -78,32 +76,32 @@
             // lblCorrect
             // 
             this.lblCorrect.Name = "lblCorrect";
-            this.lblCorrect.Size = new System.Drawing.Size(98, 21);
+            this.lblCorrect.Size = new System.Drawing.Size(77, 17);
             this.lblCorrect.Text = "Правильно:?";
             // 
             // lblMissed
             // 
             this.lblMissed.Name = "lblMissed";
-            this.lblMissed.Size = new System.Drawing.Size(76, 21);
+            this.lblMissed.Size = new System.Drawing.Size(62, 17);
             this.lblMissed.Text = "Ошибок:?";
             // 
-            // lblTotal
+            // speed
             // 
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(58, 21);
-            this.lblTotal.Text = "Всего:?";
+            this.speed.Name = "speed";
+            this.speed.Size = new System.Drawing.Size(109, 17);
+            this.speed.Text = "Скорость: ?  сим/c";
             // 
             // difficultyProgressBar
             // 
+            this.difficultyProgressBar.AutoToolTip = true;
             this.difficultyProgressBar.Name = "difficultyProgressBar";
-            this.difficultyProgressBar.Size = new System.Drawing.Size(453, 20);
+            this.difficultyProgressBar.Size = new System.Drawing.Size(330, 16);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(11, 235);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 191);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(757, 215);
+            this.pictureBox1.Size = new System.Drawing.Size(568, 175);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -115,17 +113,16 @@
             // 
             // ExerciseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(791, 466);
+            this.ClientSize = new System.Drawing.Size(585, 379);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ExerciseForm";
             this.Text = "ExerciseForm";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ExerciseForm_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBox1_KeyPress);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -140,10 +137,10 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblCorrect;
         private System.Windows.Forms.ToolStripStatusLabel lblMissed;
-        private System.Windows.Forms.ToolStripStatusLabel lblTotal;
-        private System.Windows.Forms.ToolStripProgressBar difficultyProgressBar;
+        private System.Windows.Forms.ToolStripStatusLabel speed;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripProgressBar difficultyProgressBar;
 
     }
 }

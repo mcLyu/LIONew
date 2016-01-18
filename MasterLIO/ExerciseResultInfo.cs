@@ -13,8 +13,9 @@ namespace MasterLIO
         public DateTime dateOfPassing { get; set; }//дата прохождения
         public int errorsCount { get; set; }
         public int assesment { get; set; }//оценка
-        public int speed { get; set; }//скорость в буквах в секунду
-        public int level { get; set; }//скорость в буквах в секунду
+        public double speed { get; set; }//скорость в буквах в секунду
+        public int level { get; set; }
+        public int spendetTime { get; set; }//время выполнения в секундах 
 
 
         public ExerciseResultInfo(Exercise exercise, DateTime dateOfPassing, int errorsCount, int assesment)
@@ -25,9 +26,10 @@ namespace MasterLIO
             this.assesment = assesment;
             this.speed = 0;
             this.level = 0;
+            this.spendetTime = 0;
         }
 
-        public ExerciseResultInfo(Exercise exercise, DateTime dateOfPassing, int errorsCount, int assesment, int speed)
+        public ExerciseResultInfo(Exercise exercise, DateTime dateOfPassing, int errorsCount, int assesment, double speed, int spendetTime)
         {
             this.exercise=exercise;
             this.dateOfPassing = dateOfPassing;
@@ -35,9 +37,10 @@ namespace MasterLIO
             this.assesment = assesment;
             this.speed = speed;
             this.level = level;
+            this.spendetTime = spendetTime;
         }
 
-        public ExerciseResultInfo(int exerciseId, DateTime dateOfPassing, int errorsCount, int assesment, int speed)
+        public ExerciseResultInfo(int exerciseId, DateTime dateOfPassing, int errorsCount, int assesment, double speed, int spendetTime)
         {
             this.exerciseId = exerciseId;
             this.dateOfPassing = dateOfPassing;
@@ -45,6 +48,7 @@ namespace MasterLIO
             this.assesment = assesment;
             this.speed = speed;
             this.level = level;
+            this.spendetTime = spendetTime;
         }
     }
 }

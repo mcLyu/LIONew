@@ -56,10 +56,11 @@ namespace MasterLIO
             }
 
             FormsFactory.SetUser(profile);
-
+            Session.UserId = profile.userId;
             if (profile.role.Equals(Role.STUDENT))
             {
                 FormUtils.OpenFormAndCloseCurrent(this, FormsFactory.GetUserMenuForm());
+
             }
             else
             {

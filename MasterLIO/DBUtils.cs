@@ -240,9 +240,10 @@ namespace MasterLIO
                 int exerciseId = Convert.ToInt32(reader["exercise_id"]);
                 int assesment = Convert.ToInt32(reader["assesment"]);
                 DateTime dateOfPassing = Convert.ToDateTime(reader["dateOfPass"]);
-                int speed = Convert.ToInt32(reader["speed"]);
+                double speed = Convert.ToDouble(reader["speed"]);
                 int errors = Convert.ToInt32(reader["errors"]);
-                resultInfo = new ExerciseResultInfo(exerciseId, dateOfPassing, errors, assesment, speed);
+                int spendetTime = Convert.ToInt32(reader["spendetTime"]);
+                resultInfo = new ExerciseResultInfo(exerciseId, dateOfPassing, errors, assesment, speed, spendetTime);
                 results.Add(resultInfo);
             }
 
@@ -256,7 +257,7 @@ namespace MasterLIO
         {
 
             connection.Open();
-            command = new SQLiteCommand("INSERT INTO 'Statistic' (level,exercise_id,assesment,dateOfPass,speed,user_id,errors) VALUES (@param1,@param2,@param3,@param4,@param5,@param6,@param7)", connection);
+            command = new SQLiteCommand("INSERT INTO 'Statistic' (level,exercise_id,assesment,dateOfPass,speed,user_id,errors) VALUES (@param1,@param2,@param3,@param4,@param5,@param6,@param7,@param8)", connection);
             
             List<ExerciseResultInfo> resultsInfo = statistic.getResultsInfo();
             foreach(ExerciseResultInfo resultInfo in resultsInfo)
@@ -268,6 +269,7 @@ namespace MasterLIO
                 command.Parameters.Add(new SQLiteParameter("@param5", resultInfo.speed));
                 command.Parameters.Add(new SQLiteParameter("@param6", statistic.userId));
                 command.Parameters.Add(new SQLiteParameter("@param7", resultInfo.errorsCount));
+                command.Parameters.Add(new SQLiteParameter("@param8", resultInfo.spendetTime));
             }
 
             command.ExecuteNonQuery();

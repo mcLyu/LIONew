@@ -46,7 +46,7 @@ namespace MasterLIO.Forms
             stats = new Stats();
 
             pictureBox1.Load("1.jpg");
-            
+
             index = 0;
             difficultyProgressBar.Minimum = 0;
             difficultyProgressBar.Maximum = list.Count;
@@ -54,17 +54,17 @@ namespace MasterLIO.Forms
 
             watch = new Stopwatch();
             watch.Start();
-            
+
         }
 
 
-        
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             double errorsCount = stats.Missed;
             double maxErrorsCount = exercise.maxErrors;
-            
+
 
             int assigment = (int)(5 * (1 - errorsCount / maxErrorsCount));
 
@@ -75,6 +75,9 @@ namespace MasterLIO.Forms
 
             }
 
+
+            double speedDouble = (double)stats.Total / watch.Elapsed.Seconds;
+
             if (stats.Missed >= exercise.maxErrors)
             {
                 listBox1.Items.Clear();
@@ -83,11 +86,13 @@ namespace MasterLIO.Forms
                 timer1.Stop();
                 watch.Stop();
                 watch.Reset();
-                Session.CurrentResultInfo = new ExerciseResultInfo(exercise, new DateTime(), stats.Missed, assigment, watch.Elapsed.Seconds);
+                
+                Session.CurrentResultInfo = new ExerciseResultInfo(exercise, new DateTime(), stats.Missed, assigment, Math.Round(speedDouble, 1), watch.Elapsed.Seconds);
                 Int32 command = 0;
                 ExeciseResultForm execiseResult = new ExeciseResultForm();
                 execiseResult.ShowDialog();
-                if( command == 1){
+                if (command == 1)
+                {
                     clearAll();
                 }
 
@@ -104,11 +109,19 @@ namespace MasterLIO.Forms
                 timer1.Stop();
                 watch.Stop();
                 isRuning = false;
-                Session.CurrentResultInfo = new ExerciseResultInfo(exercise, new DateTime(), stats.Missed, assigment, watch.Elapsed.Seconds);
+
+                ExerciseResultInfo result = new ExerciseResultInfo(exercise, new DateTime(), stats.Missed, assigment, Math.Round(speedDouble, 1), watch.Elapsed.Seconds);
+
+                Statistic stat = new Statistic(Session.UserId);
+                stat.addResult(result);
+                DBUtils.saveUserStatictis(stat);
+
+                Session.CurrentResultInfo = result;
+
 
                 ExeciseResultForm execiseResult = new ExeciseResultForm();
                 execiseResult.ShowDialog();
-                int command =  execiseResult.getCommand();
+                int command = execiseResult.getCommand();
                 execiseResult.Close();
                 if (command == 1)
                 {
@@ -123,20 +136,14 @@ namespace MasterLIO.Forms
             }
         }
 
-        private Char ConvertKeyToChar(KeyEventArgs e)
-        {
-            int keyValue = e.KeyValue;
-            if (!e.Shift && keyValue >= (int)Keys.A && keyValue <= (int)Keys.Z)
-                return (char)(keyValue + 32);
-            return (char)keyValue;
-        }
 
-        private void ExerciseForm_KeyDown(object sender, KeyEventArgs e)
+
+        private void listBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyCode != Keys.ShiftKey && e.KeyCode != Keys.ControlKey  && isRuning)
+            if (isRuning && listBox1.Items.Count > 0)
             {
 
-                Char keyChar = ConvertKeyToChar(e);
+                Char keyChar = e.KeyChar;
                 Char firstChar = (Char)listBox1.Items[0];
 
                 if (firstChar.Equals(keyChar))
@@ -150,13 +157,15 @@ namespace MasterLIO.Forms
                 {
                     stats.Update(false);
                 }
-                lblCorrect.Text = "Correct: " + stats.Correct;
-                lblMissed.Text = "Missed: " + stats.Missed;
-                lblTotal.Text = "Total: " + stats.Total;
+                double speedDouble = (double)stats.Total / watch.Elapsed.Seconds;
+                lblCorrect.Text = "Правильно: " + stats.Correct;
+                lblMissed.Text = "Ошибок: " + stats.Missed;
+                speed.Text = "Скорость: " + Math.Round(speedDouble, 1) + "сим/c";
+
             }
         }
 
-       
+
     }
 
 

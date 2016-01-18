@@ -19,7 +19,8 @@ namespace MasterLIO.Forms
             ExerciseResultInfo exerciseInfo = Session.CurrentResultInfo;
             wrongNumber.Text = "Количество ошибок: " + exerciseInfo.errorsCount.ToString();
             markLabel.Text = exerciseInfo.assesment.ToString();
-            time.Text = "Время выполнения: " + exerciseInfo.speed + " сек.";
+            time.Text = "Время выполнения: " + exerciseInfo.spendetTime + " сек.";
+            speed.Text = "Скорость: " + exerciseInfo.speed + " сим/с";
         }
 
         public int getCommand()
