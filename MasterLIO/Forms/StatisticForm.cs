@@ -13,15 +13,22 @@ namespace MasterLIO.Forms
 {
     public partial class StatisticForm : Form
     {
-        private static int CURRENT_USER_ID = 1;
-        private Statistic statistic = DBUtils.GetUserStatistic(CURRENT_USER_ID);
+        private static Statistic statistic = DBUtils.GetUserStatistic(Session.user.userId);
+        List<UserProfile> users = DBUtils.LoadAllUsers();
         private List<ExerciseResultInfo> resultsInfo;
 
         public StatisticForm()
         {
             InitializeComponent();
+            if (Session.user.role == Role.ADMIN)
+            {
+                comboBox1.Visible = true;
+                label7.Visible = true;
+                comboBox1.Items.AddRange(users.ToArray());
+            }
             statisticChart1.Series["Series1"].Enabled = false;
             dateTimePicker1.Text = "";
+
         }
 
         private void statisticSearchButton1_Click(object sender, EventArgs e)
@@ -74,6 +81,17 @@ namespace MasterLIO.Forms
             exerciseId = exerciseId.Substring(exerciseId.Length - 1) + exerciseId.Substring(0,exerciseId.Length-1);
 
             return Convert.ToInt32(exerciseId);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UserProfile currentUser = null;
+            foreach (UserProfile user in users)
+            {
+                if (user.login.Equals(comboBox1.SelectedItem.ToString()))
+                    currentUser = user;
+            }
+            statistic = DBUtils.GetUserStatistic(currentUser.userId);
         }
 
     }

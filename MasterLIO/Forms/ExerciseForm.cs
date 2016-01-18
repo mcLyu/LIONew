@@ -113,7 +113,7 @@ namespace MasterLIO.Forms
 
                 ExerciseResultInfo result = new ExerciseResultInfo(exercise, new DateTime(), stats.Missed, assigment, Math.Round(speedDouble, 1), watch.Elapsed.Seconds);
 
-                Statistic stat = new Statistic(Session.UserId);
+                Statistic stat = new Statistic(Session.user.userId);
                 stat.addResult(result);
                 DBUtils.saveUserStatictis(stat);
 

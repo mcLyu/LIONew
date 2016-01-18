@@ -10,6 +10,6 @@ namespace MasterLIO
     {
         public static Exercise CurrentExercise { get; set; }
         public static ExerciseResultInfo CurrentResultInfo { get; set; }
-        public static long UserId { get; set; }
+        public static UserProfile user { get; set; }
     }
 }

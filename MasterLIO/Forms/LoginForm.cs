@@ -46,6 +46,12 @@ namespace MasterLIO
                     this.Close();
                     return;
                 }
+                else
+                {
+                    this.Close();
+                    Application.Exit();
+                    return;
+                }
             }
             //логин найден, пароль нет
             else if (profile.password.Equals(""))
@@ -56,7 +62,7 @@ namespace MasterLIO
             }
 
             FormsFactory.SetUser(profile);
-            Session.UserId = profile.userId;
+            Session.user = profile;
             if (profile.role.Equals(Role.STUDENT))
             {
                 FormUtils.OpenFormAndCloseCurrent(this, FormsFactory.GetUserMenuForm());

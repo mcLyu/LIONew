@@ -126,15 +126,17 @@ namespace MasterLIO.Forms
 
         private bool areasUsedCorrected()
         {
-            List<KeyboardArea> areas = Exercise.getAreasList(areasTextBox.Text);
+            List<KeyboardArea> areas = Exercise.getAreasList(Exercise.getAreasAsString(areasList));
             foreach(char s in richTextBox1.Text)
             {
+                char ch = Char.ToLower(s);
                 bool b = false;
                 foreach (KeyboardArea area in areas)
                 {
-                    if (AreaHelper.getAreaSymbols(area).Contains(s))
+                    if (AreaHelper.getAreaSymbols(area).Contains(ch))
                     {
                         b = true;
+                        break;
                     }
                 }
                 if (b == false) return b;
