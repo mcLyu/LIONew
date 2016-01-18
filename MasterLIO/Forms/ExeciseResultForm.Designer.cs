@@ -30,13 +30,13 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.speed = new System.Windows.Forms.Label();
             this.time = new System.Windows.Forms.Label();
             this.wrongNumber = new System.Windows.Forms.Label();
             this.markLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.speed = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,15 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Результаты";
+            // 
+            // speed
+            // 
+            this.speed.AutoSize = true;
+            this.speed.Location = new System.Drawing.Point(6, 89);
+            this.speed.Name = "speed";
+            this.speed.Size = new System.Drawing.Size(35, 13);
+            this.speed.TabIndex = 5;
+            this.speed.Text = "label2";
             // 
             // time
             // 
@@ -121,15 +130,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // speed
-            // 
-            this.speed.AutoSize = true;
-            this.speed.Location = new System.Drawing.Point(6, 89);
-            this.speed.Name = "speed";
-            this.speed.Size = new System.Drawing.Size(35, 13);
-            this.speed.TabIndex = 5;
-            this.speed.Text = "label2";
-            // 
             // ExeciseResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,6 +143,7 @@
             this.Controls.Add(this.button1);
             this.Name = "ExeciseResultForm";
             this.Text = "ExeciseResultForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExeciseResultForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -40,3 +40,18 @@ C:\Users\Mill\Desktop\NET\LIONew\MasterLIO\obj\Debug\MasterLIO.Forms.UserMenuFor
 C:\Users\Mill\Desktop\NET\LIONew\MasterLIO\obj\Debug\MasterLIO.LoginForm.resources
 C:\Users\Mill\Desktop\NET\LIONew\MasterLIO\obj\Debug\MasterLIO.Properties.Resources.resources
 C:\Users\Mill\Desktop\NET\LIONew\MasterLIO\obj\Debug\MasterLIO.csproj.GenerateResource.Cache
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\MasterLIO.exe.config
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\obj\Debug\MasterLIO.exe
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\obj\Debug\MasterLIO.pdb
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\MasterLIO.exe
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\MasterLIO.pdb
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\EntityFramework.dll
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\idgen.net.dll
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\System.Data.SQLite.dll
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\EntityFramework.xml
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\System.Data.SQLite.xml
+C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\obj\Debug\MasterLIO.csprojResolveAssemblyReference.cache

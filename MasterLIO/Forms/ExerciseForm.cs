@@ -19,6 +19,7 @@ namespace MasterLIO.Forms
         bool isRuning;
         Stopwatch watch;
         Stats stats;
+        bool mistake = false;
         private void clearAll()
         {
             list = exercise.getTextsAsArrayChar();
@@ -64,9 +65,17 @@ namespace MasterLIO.Forms
         {
             double errorsCount = stats.Missed;
             double maxErrorsCount = exercise.maxErrors;
+            int assigment;
 
-
-            int assigment = (int)(5 * (1 - errorsCount / maxErrorsCount));
+            if (maxErrorsCount == 0)
+            {
+                assigment = (int)Math.Round(5 * (1 - errorsCount));
+            }
+            else
+            {
+                assigment = (int)Math.Round(5 * (1 - errorsCount / maxErrorsCount));
+                
+            }
 
             if (index < list.Count && listBox1.Items.Count < 4)
             {
@@ -78,16 +87,15 @@ namespace MasterLIO.Forms
 
             double speedDouble = (double)stats.Total / watch.Elapsed.Seconds;
 
-            if (stats.Missed >= exercise.maxErrors)
+            if (stats.Missed >= exercise.maxErrors && stats.Missed != 0)
             {
                 listBox1.Items.Clear();
                 listBox1.Items.Add("Game over");
                 isRuning = false;
                 timer1.Stop();
                 watch.Stop();
-                watch.Reset();
 
-                Session.CurrentResultInfo = new ExerciseResultInfo(exercise, new DateTime(), stats.Missed, assigment, Math.Round(speedDouble, 1), watch.Elapsed.Seconds);
+                Session.CurrentResultInfo = new ExerciseResultInfo(exercise,DateTime.Today, stats.Missed, assigment, Math.Round(speedDouble, 1), watch.Elapsed.Seconds);
                 ExeciseResultForm execiseResult = new ExeciseResultForm();
                 execiseResult.ShowDialog();
                 int command = execiseResult.getCommand();
@@ -111,9 +119,9 @@ namespace MasterLIO.Forms
                 watch.Stop();
                 isRuning = false;
 
-                ExerciseResultInfo result = new ExerciseResultInfo(exercise, new DateTime(), stats.Missed, assigment, Math.Round(speedDouble, 1), watch.Elapsed.Seconds);
+                ExerciseResultInfo result = new ExerciseResultInfo(exercise, DateTime.Today, stats.Missed, assigment, Math.Round(speedDouble, 1), watch.Elapsed.Seconds);
 
-                Statistic stat = new Statistic(Session.user.userId);
+                Statistic stat = new Statistic(Session.UserId);
                 stat.addResult(result);
                 DBUtils.saveUserStatictis(stat);
 
@@ -156,12 +164,32 @@ namespace MasterLIO.Forms
                 }
                 else
                 {
-                    stats.Update(false);
+                    if (stats.Missed <= exercise.maxErrors)
+                    {
+                        stats.Update(false);
+                        mistake = true;
+                        timer2.Start();
+                    }
                 }
                 double speedDouble = (double)stats.Total / watch.Elapsed.Seconds;
                 lblCorrect.Text = "Правильно: " + stats.Correct;
                 lblMissed.Text = "Ошибок: " + stats.Missed;
                 speed.Text = "Скорость: " + Math.Round(speedDouble, 1) + "сим/c";
+
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (mistake)
+            {
+                mistake = false;
+                listBox1.BackColor = Color.Red;
+            }
+            else
+            {
+                listBox1.BackColor = Color.Azure;
+                timer2.Stop();
 
             }
         }

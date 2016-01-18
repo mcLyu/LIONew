@@ -40,6 +40,11 @@ namespace MasterLIO.Forms
             this.Close();
         }
 
+        private void ExeciseResultForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(command == 0) command = 2;
+        }
+
 
     }
 }
