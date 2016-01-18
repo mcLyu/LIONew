@@ -21,6 +21,10 @@ namespace MasterLIO.Forms
             return new LoginForm();
         }
 
+        public static Form GetExercisePickerForm()
+        {
+            return new ExercisePicker();
+        }
         public static Form GetUserMenuForm()
         {
             return new UserMenuForm();

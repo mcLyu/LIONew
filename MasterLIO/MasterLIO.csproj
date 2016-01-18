@@ -117,6 +117,12 @@
     <Compile Include="Forms\ExerciseForm.Designer.cs">
       <DependentUpon>ExerciseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ExercisePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExercisePicker.Designer.cs">
+      <DependentUpon>ExercisePicker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormsFactory.cs" />
     <Compile Include="Forms\SelectAreaForm.cs">
       <SubType>Form</SubType>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExerciseForm.resx">
       <DependentUpon>ExerciseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExercisePicker.resx">
+      <DependentUpon>ExercisePicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SelectAreaForm.resx">
       <DependentUpon>SelectAreaForm.cs</DependentUpon>
