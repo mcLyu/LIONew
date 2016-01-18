@@ -100,6 +100,16 @@ namespace MasterLIO
             return stringAreas;
         }
 
+        public static String getAreasAsStringNumber(List<KeyboardArea> areas)
+        {
+            String stringAreas = "";
+            foreach (KeyboardArea area in areas)
+            {
+                stringAreas += area.ToString() + " ";
+            }
+            return stringAreas;
+        }
+
         public List<Char> getTextsAsArrayChar()
         {
             List<Char> arrayChar = new List<Char>();
@@ -108,6 +118,21 @@ namespace MasterLIO
                 arrayChar.Add(this.text[i]);
             }
             return arrayChar;
+        }
+
+        public static String getAreasAsNums(List<KeyboardArea> areas)
+        {
+            String nums = "";
+            if (areas.Contains(KeyboardArea.ONE)) nums += "1 ";
+            if (areas.Contains(KeyboardArea.TWO)) nums += "2 ";
+            if (areas.Contains(KeyboardArea.THREE)) nums += "3 ";
+            if (areas.Contains(KeyboardArea.FOUR)) nums += "4 ";
+            if (areas.Contains(KeyboardArea.FIVE)) nums += "5 ";
+            if (areas.Contains(KeyboardArea.SIX)) nums += "6 ";
+            if (areas.Contains(KeyboardArea.SEVEN)) nums += "7 ";
+            if (areas.Contains(KeyboardArea.EIGHT)) nums += "8 ";
+            if (areas.Contains(KeyboardArea.NINE)) nums += "9 ";
+            return nums;
         }
 
         public static List<KeyboardArea> getAreasList(String areas)
@@ -129,4 +154,6 @@ namespace MasterLIO
     }
 
     public enum KeyboardArea { ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE }//девять зон клавиатуры
+    
+
 }

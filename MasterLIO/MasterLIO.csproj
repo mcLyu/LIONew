@@ -84,6 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaHelper.cs" />
     <Compile Include="DBUtils.cs" />
     <Compile Include="Exercise.cs" />
     <Compile Include="ExerciseResultInfo.cs" />

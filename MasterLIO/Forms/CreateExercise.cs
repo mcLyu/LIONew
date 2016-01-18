@@ -12,6 +12,7 @@ namespace MasterLIO.Forms
 {
     public partial class CreateExercise : Form
     {
+        List<KeyboardArea> areasList  = new List<KeyboardArea>();
 
         public CreateExercise()
         {
@@ -27,17 +28,19 @@ namespace MasterLIO.Forms
                 areasTextBox.BackColor = Color.GreenYellow;
                 richTextBox1.ReadOnly = false;
                 richTextBox1.BackColor = Color.White;
+                richTextBox1.MaxLength = (int) numericUpDown1.Value;
             }
         }
 
         private void selectAreaButton_Click(object sender, EventArgs e)
         {
-            List<KeyboardArea> areasList = new List<KeyboardArea>();
+            areasList.Clear();
+            areasTextBox.Text = "";
+
             Form f = new SelectAreaForm(ref areasList);
             f.ShowDialog();
 
-
-            areasTextBox.Text = Exercise.getAreasAsString(areasList);
+            areasTextBox.Text = Exercise.getAreasAsNums(areasList);
             textBox4.Text = areasList.Count.ToString();
 
             areasTextBox.BackColor = Color.GreenYellow;
@@ -92,6 +95,7 @@ namespace MasterLIO.Forms
 
         }
 
+        //Подтвердить
         private void button4_Click(object sender, EventArgs e)
         {
             String name = textBox1.Text;
@@ -101,8 +105,60 @@ namespace MasterLIO.Forms
             List<KeyboardArea> areas = Exercise.getAreasList(areasTextBox.Text);
             int level = Convert.ToInt32(textBox4.Text);
 
-            Exercise exercise = new Exercise(name,text,areas,maxErrors,maxTime,level);
-            DBUtils.SaveExercise(exercise);
+            if (lastValidateCorrect())
+            {
+                Exercise exercise = new Exercise(name, text, areas, maxErrors, maxTime, level);
+                DBUtils.SaveExercise(exercise);
+            }
+            else MessageBox.Show("Проверьте настройки параметров!");
+        }
+
+        private bool lastValidateCorrect()
+        {
+            if ((textBox1.Text != "")
+                && (areasTextBox.Text != "")
+                    && (areasUsedCorrected()))
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        private bool areasUsedCorrected()
+        {
+            List<KeyboardArea> areas = Exercise.getAreasList(areasTextBox.Text);
+            foreach(char s in richTextBox1.Text)
+            {
+                bool b = false;
+                foreach (KeyboardArea area in areas)
+                {
+                    if (AreaHelper.getAreaSymbols(area).Contains(s))
+                    {
+                        b = true;
+                    }
+                }
+                if (b == false) return b;
+            }
+            return true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            List<char> exerChars = new List<char>();
+            foreach (KeyboardArea area in areasList)
+            {
+                char[] symbols = AreaHelper.getAreaSymbols(area);
+                exerChars.AddRange(symbols);
+            }
+            
+            int maxGen = exerChars.Count;
+            String exerciseText = "";
+
+            for (int i = 0; i < numericUpDown1.Value; i++)
+                exerciseText += exerChars[rnd.Next(0, maxGen)];
+
+            richTextBox1.Text = exerciseText;
         }
     }
 }
