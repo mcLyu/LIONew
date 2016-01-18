@@ -86,11 +86,12 @@ namespace MasterLIO.Forms
                 timer1.Stop();
                 watch.Stop();
                 watch.Reset();
-                
+
                 Session.CurrentResultInfo = new ExerciseResultInfo(exercise, new DateTime(), stats.Missed, assigment, Math.Round(speedDouble, 1), watch.Elapsed.Seconds);
-                Int32 command = 0;
                 ExeciseResultForm execiseResult = new ExeciseResultForm();
                 execiseResult.ShowDialog();
+                int command = execiseResult.getCommand();
+                execiseResult.Close();
                 if (command == 1)
                 {
                     clearAll();

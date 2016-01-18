@@ -257,7 +257,7 @@ namespace MasterLIO
         {
 
             connection.Open();
-            command = new SQLiteCommand("INSERT INTO 'Statistic' (level,exercise_id,assesment,dateOfPass,speed,user_id,errors) VALUES (@param1,@param2,@param3,@param4,@param5,@param6,@param7,@param8)", connection);
+            command = new SQLiteCommand("INSERT INTO 'Statistic' (level,exercise_id,assesment,dateOfPass,speed,user_id,errors,spendetTime) VALUES (@param1,@param2,@param3,@param4,@param5,@param6,@param7,@param8)", connection);
             
             List<ExerciseResultInfo> resultsInfo = statistic.getResultsInfo();
             foreach(ExerciseResultInfo resultInfo in resultsInfo)
