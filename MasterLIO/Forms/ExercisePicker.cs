@@ -10,8 +10,12 @@ using System.Windows.Forms;
 
 namespace MasterLIO.Forms
 {
+    public enum EXERCISE_MODE { STANDART, BABY }
+
     public partial class ExercisePicker : Form
     {
+
+
         private void fillData(int level)
         {
             List<Exercise> list = DBUtils.LoadExercises(level);
@@ -36,6 +40,8 @@ namespace MasterLIO.Forms
         public ExercisePicker()
         {
             InitializeComponent();
+            dataGridView1.MouseWheel += new MouseEventHandler(dataGridView1_MouseWheel);
+            radioButton1.Checked = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
@@ -50,7 +56,7 @@ namespace MasterLIO.Forms
             comboBox1.Items.Add("Уровень 7");
             comboBox1.Items.Add("Уровень 8");
             comboBox1.Items.Add("Уровень 9");
-           
+
 
             dataGridView1.ColumnCount = 2;
 
@@ -59,28 +65,86 @@ namespace MasterLIO.Forms
 
             comboBox1.SelectedIndex = 0;
             fillData(comboBox1.SelectedIndex + 1);
+            dataGridView1.Focus();
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             fillData(comboBox1.SelectedIndex + 1);
+            dataGridView1.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int level = comboBox1.SelectedIndex + 1;
-            List<Exercise>  list = DBUtils.LoadExercises(level);
-            Session.CurrentExercise = list[dataGridView1.SelectedRows[0].Index];
-            FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseForm());
+            if (dataGridView1.Rows.Count > 0)
+            {
+                int level = comboBox1.SelectedIndex + 1;
+                List<Exercise> list = DBUtils.LoadExercises(level);
+                Session.CurrentExercise = list[dataGridView1.SelectedRows[0].Index];
+                if (radioButton1.Checked)
+                {
+                    Session.mode = 1;
+                    FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseForm());
+
+                }
+                else if (radioButton2.Checked)
+                {
+                    Session.mode = 0;
+                    FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseBabyForm());
+
+                }
+            }
         }
 
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int level = comboBox1.SelectedIndex + 1;
-            List<Exercise> list = DBUtils.LoadExercises(level);
-            Session.CurrentExercise = list[dataGridView1.SelectedRows[0].Index];
-            FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseForm());
+            if (dataGridView1.Rows.Count > 0)
+            {
+                int level = comboBox1.SelectedIndex + 1;
+                List<Exercise> list = DBUtils.LoadExercises(level);
+                Session.CurrentExercise = list[dataGridView1.SelectedRows[0].Index];
+
+                if (radioButton1.Checked)
+                {
+                    Session.mode = 1;
+                    FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseForm());
+
+                }
+                else if (radioButton2.Checked)
+                {
+                    Session.mode = 0;
+                    FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseBabyForm());
+
+                }
+            }
+        }
+
+        private void ExercisePicker_Load(object sender, EventArgs e)
+        {
+           
+            fillData(comboBox1.SelectedIndex + 1);
+            dataGridView1.TabIndex = 0;
+        }
+
+        void dataGridView1_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                int currentIndex = dataGridView1.SelectedRows[0].Index;
+
+                if (e.Delta > 0 && currentIndex > 0)
+                {
+                    currentIndex--;
+                    dataGridView1.Rows[currentIndex].Selected = true;
+                }
+                else if (e.Delta < 0 && currentIndex < dataGridView1.Rows.Count - 1)
+                {
+                    currentIndex++;
+                    dataGridView1.Rows[currentIndex].Selected = true;
+                }
+            }
         }
 
     }

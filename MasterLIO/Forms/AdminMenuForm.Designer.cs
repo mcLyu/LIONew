@@ -42,7 +42,7 @@
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
-            this.exitButton.Location = new System.Drawing.Point(72, 268);
+            this.exitButton.Location = new System.Drawing.Point(72, 284);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(284, 50);
             this.exitButton.TabIndex = 5;
@@ -85,10 +85,10 @@
             // 
             // EditAccountButton
             // 
-            this.EditAccountButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
+            this.EditAccountButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.EditAccountButton.Location = new System.Drawing.Point(72, 202);
             this.EditAccountButton.Name = "EditAccountButton";
-            this.EditAccountButton.Size = new System.Drawing.Size(284, 60);
+            this.EditAccountButton.Size = new System.Drawing.Size(284, 76);
             this.EditAccountButton.TabIndex = 7;
             this.EditAccountButton.Text = "Управление учетными записями";
             this.EditAccountButton.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(398, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(400, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -126,7 +126,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(398, 330);
+            this.ClientSize = new System.Drawing.Size(400, 358);
             this.Controls.Add(this.EditAccountButton);
             this.Controls.Add(this.CreateExercsieButton);
             this.Controls.Add(this.exitButton);
@@ -135,6 +135,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "AdminMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Меню";

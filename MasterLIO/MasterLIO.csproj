@@ -94,6 +94,12 @@
     <Compile Include="Forms\AdminMenuForm.Designer.cs">
       <DependentUpon>AdminMenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BabyExercise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BabyExercise.Designer.cs">
+      <DependentUpon>BabyExercise.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateExercise.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     <Compile Include="UserProfile.cs" />
     <EmbeddedResource Include="Forms\AdminMenuForm.resx">
       <DependentUpon>AdminMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BabyExercise.resx">
+      <DependentUpon>BabyExercise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateExercise.resx">
       <DependentUpon>CreateExercise.cs</DependentUpon>

@@ -88,8 +88,13 @@ namespace MasterLIO.Forms
                 richTextBox1.Text = lines[1];
                 textBox4.Text = lines[2];
                 areasTextBox.Text = lines[3];
+                String s = Exercise.getAreasAsNums(lines[3].ToString());
+                List<KeyboardArea> areas = Exercise.getAreasList(s);
+
+                areasList.AddRange(areas);
                 numericUpDown3.Value = Convert.ToDecimal(lines[4]);
                 numericUpDown2.Value = Convert.ToDecimal(lines[5]);
+                numericUpDown1.Value = Convert.ToDecimal(lines[1].Length);
             }
             validateAll();
 
@@ -160,9 +165,19 @@ namespace MasterLIO.Forms
             String exerciseText = "";
 
             for (int i = 0; i < numericUpDown1.Value; i++)
-                exerciseText += exerChars[rnd.Next(0, maxGen)];
+                exerciseText += exerChars[rnd.Next(0, maxGen)];//Создание упражнения падает
 
             richTextBox1.Text = exerciseText;
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+            numericUpDown2.Maximum = numericUpDown1.Value;
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            numericUpDown2.Maximum = numericUpDown1.Value;
         }
     }
 }

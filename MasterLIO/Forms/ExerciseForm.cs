@@ -20,6 +20,11 @@ namespace MasterLIO.Forms
         Stopwatch watch;
         Stats stats;
         bool mistake = false;
+        bool isOpening = true;
+        int exerciseType;
+        List<TextBox> listOfBox = new List<TextBox>();
+    
+    
         private void clearAll()
         {
             list = exercise.getTextsAsArrayChar();
@@ -41,8 +46,12 @@ namespace MasterLIO.Forms
         public ExerciseForm()
         {
             InitializeComponent();
+
             exercise = Session.CurrentExercise;
             list = exercise.getTextsAsArrayChar();
+            this.BackColor = Color.AliceBlue;
+
+            this.Refresh();
 
             stats = new Stats();
 
@@ -55,10 +64,11 @@ namespace MasterLIO.Forms
 
             watch = new Stopwatch();
             watch.Start();
+            listBox1.Visible = true;
+            exerciseType = 0;
+                
 
         }
-
-
 
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -77,7 +87,7 @@ namespace MasterLIO.Forms
                 
             }
 
-            if (index < list.Count && listBox1.Items.Count < 4)
+            if (index < list.Count && listBox1.Items.Count < 4 )
             {
                 listBox1.Items.Add(list[index]);
                 index++;
@@ -88,7 +98,7 @@ namespace MasterLIO.Forms
             double speedDouble = (double)stats.Total / watch.Elapsed.Seconds;
 
 
-            if (watch.Elapsed.Seconds> exercise.maxTime)
+            if (watch.Elapsed.Seconds > exercise.maxTime && exercise.maxTime!=0)
             {
                 listBox1.Items.Clear();
                 listBox1.Items.Add("Time is out.");
@@ -200,7 +210,7 @@ namespace MasterLIO.Forms
                 }
                 double speedDouble = (double)stats.Total / watch.Elapsed.Seconds;
                 lblCorrect.Text = "Правильно: " + stats.Correct;
-                lblMissed.Text = "Ошибок: " + stats.Missed;
+                lblMissed.Text = "Ошибок: " + stats.Missed + "/" + exercise.maxErrors;
                 speed.Text = "Скорость: " + Math.Round(speedDouble, 1) + "сим/c";
 
             }
@@ -220,6 +230,8 @@ namespace MasterLIO.Forms
 
             }
         }
+
+ 
 
 
     }
