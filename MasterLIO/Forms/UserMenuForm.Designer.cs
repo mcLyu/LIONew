@@ -71,7 +71,9 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.statistic);
             this.Controls.Add(this.ExerciseButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "UserMenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserMenu";
             this.ResumeLayout(false);
 

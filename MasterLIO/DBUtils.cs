@@ -75,9 +75,43 @@ namespace MasterLIO
             return new UserProfile(login, password, Role.STUDENT, id);
         }
 
+
+        public static UserProfile RegisterUser(String login, String password,Role role)
+        {
+            connection.Open();
+            command = new SQLiteCommand("INSERT INTO 'User_Profile' (user_id,login,password,isAdmin) VALUES (@param1,@param2,@param3,@param4)", connection);
+
+            int id = IDGenerator.CreateId();
+
+            string isAdmin;
+            if (role.Equals(Role.STUDENT))
+            {
+                isAdmin = "0";
+            }
+            else 
+            {
+                isAdmin = "1";
+            }
+            command.Parameters.Add(new SQLiteParameter("@param1", id));
+            command.Parameters.Add(new SQLiteParameter("@param2", login));
+            command.Parameters.Add(new SQLiteParameter("@param3", password));
+            command.Parameters.Add(new SQLiteParameter("@param4", isAdmin));
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return new UserProfile(login, password, Role.STUDENT, id);
+        }
+
         public static void RemoveUser(UserProfile user)
         {
-           
+            int id = user.userId;
+            connection.Open();
+            command = new SQLiteCommand("DELETE from 'User_Profile' WHERE user_id=" + id.ToString(), connection);
+
+            command.ExecuteNonQuery();
+            connection.Close();
         }
 
 
@@ -187,7 +221,7 @@ namespace MasterLIO
                 string areas = reader["keyboard_areas"].ToString();
 
                 List<KeyboardArea> listAreas = Exercise.getAreasList(areas);
-                Exercise exercise = new Exercise(id, name, text, listAreas, maxErrors, maxTime);
+                Exercise exercise = new Exercise(id, name, text, listAreas, maxErrors, maxTime,level);
                 exercises.Add(exercise);
 
             }
@@ -211,9 +245,11 @@ namespace MasterLIO
                 string isAdmin = reader["isAdmin"].ToString();
                 int id = Convert.ToInt32(reader["user_id"].ToString());
 
-                Role role;
-                if (isAdmin == "1") role = Role.ADMIN;
-                else role = Role.STUDENT;
+                Role role = Role.STUDENT;
+
+                if (isAdmin == "True") role = Role.ADMIN;
+
+                if (isAdmin == "False") role = Role.STUDENT;
 
                 profiles.Add(new UserProfile(login, password, role,id));
 

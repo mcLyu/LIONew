@@ -22,7 +22,7 @@ namespace MasterLIO.Forms
             InitializeComponent();
             this.areasList = areasList;
             points = new List<Point>();
-            graph = pictureBox1.CreateGraphics();
+            pictureBox1.Load("2.jpg");
         }
 
 

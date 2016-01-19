@@ -90,6 +90,18 @@ namespace MasterLIO
             this.length = text.Length;
         }
 
+        public Exercise(int id, string name,string text,List<KeyboardArea> listAreas, int maxErrors, int maxTime,int level)
+        {
+            this.id = id;
+            this.name = name;
+            this.text = text;
+            this.areas = areas;
+            this.maxErrors = maxErrors;
+            this.level = level; // уровень = количеству заюзаных зон
+            this.maxTime = maxTime;
+            this.length = text.Length;
+        }
+
         public static String getAreasAsString(List<KeyboardArea> areas)
         {
             String stringAreas = "";

@@ -127,7 +127,9 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ExerciseForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Выполнение упражнения";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBox1_KeyPress);
             this.statusStrip1.ResumeLayout(false);

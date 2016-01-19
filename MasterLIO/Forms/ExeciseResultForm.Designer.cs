@@ -141,7 +141,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ExeciseResultForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExeciseResultForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExeciseResultForm_FormClosing);
             this.groupBox1.ResumeLayout(false);

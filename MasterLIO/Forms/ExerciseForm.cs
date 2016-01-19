@@ -123,7 +123,7 @@ namespace MasterLIO.Forms
 
                 Statistic stat = new Statistic(Session.user.userId);
                 stat.addResult(result);
-                DBUtils.saveUserStatictis(stat);
+                
 
                 Session.CurrentResultInfo = result;
 
@@ -139,6 +139,7 @@ namespace MasterLIO.Forms
 
                 if (command == 2)
                 {
+                    DBUtils.saveUserStatictis(stat);
                     this.Close();
                 }
 

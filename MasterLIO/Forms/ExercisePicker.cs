@@ -74,12 +74,14 @@ namespace MasterLIO.Forms
             FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseForm());
         }
 
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int level = comboBox1.SelectedIndex + 1;
             List<Exercise> list = DBUtils.LoadExercises(level);
             Session.CurrentExercise = list[dataGridView1.SelectedRows[0].Index];
             FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseForm());
         }
+
     }
 }

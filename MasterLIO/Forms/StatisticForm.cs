@@ -20,13 +20,16 @@ namespace MasterLIO.Forms
         public StatisticForm()
         {
             InitializeComponent();
+            statisticChart1.Series["Time"].IsVisibleInLegend = false;
+            statisticChart1.Series["Time"].BorderWidth = 3;
+            //statisticChart1.Series["Time"].
             if (Session.user.role == Role.ADMIN)
             {
                 comboBox1.Visible = true;
                 label7.Visible = true;
                 comboBox1.Items.AddRange(users.ToArray());
             }
-            statisticChart1.Series["Series1"].Enabled = false;
+            // statisticChart1.Series["Series1"].Enabled = false;
             dateTimePicker1.Text = "";
 
         }
@@ -68,7 +71,7 @@ namespace MasterLIO.Forms
             foreach (ExerciseResultInfo result in resultsInfo)
             {
                 if (result.exerciseId == exerciseNum)
-                    exercise = result;        
+                    exercise = result;
             }
             return exercise;
         }
@@ -89,7 +92,7 @@ namespace MasterLIO.Forms
                 match = match.NextMatch();
             }
 
-            exerciseId = exerciseId.Substring(exerciseId.Length - 1) + exerciseId.Substring(0,exerciseId.Length-1);
+            exerciseId = exerciseId.Substring(exerciseId.Length - 1) + exerciseId.Substring(0, exerciseId.Length - 1);
 
             return Convert.ToInt32(exerciseId);
         }
@@ -103,6 +106,38 @@ namespace MasterLIO.Forms
                     currentUser = user;
             }
             statistic = DBUtils.GetUserStatistic(currentUser.userId);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            statisticChart1.Series["Time"].Points.AddXY(new DateTime(2016, 1, 16), 0);
+            statisticChart1.Series["Time"].Points.AddXY(new DateTime(2016, 1, 16), 1);
+            statisticChart1.Series["Time"].Points.AddXY(new DateTime(2016, 1, 17), 4);
+            statisticChart1.Series["Time"].Points.AddXY(new DateTime(2016, 1, 18), 5);
+            statisticChart1.Series["Time"].Points.AddXY(new DateTime(2016, 1, 19), 2);
+
+
+        }
+
+        private void statisticChart1_MouseClick(object sender, MouseEventArgs e)
+        {
+           var x =  statisticChart1.ChartAreas[0].AxisX.PixelPositionToValue(e.X);
+           var y =  statisticChart1.ChartAreas[0].AxisY.PixelPositionToValue(e.Y);
+           DateTime test = DateTime.FromOADate(x);
+        }
+
+        private void statisticChart1_Click(object sender, EventArgs e)
+        {
+
+        }
+        Point prevPosition;
+        ToolTip tooltip = new ToolTip();
+        private void statisticChart1_MouseMove(object sender, MouseEventArgs e)
+        {
+
+          
+
         }
 
     }

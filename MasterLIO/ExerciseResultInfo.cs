@@ -32,11 +32,12 @@ namespace MasterLIO
         public ExerciseResultInfo(Exercise exercise, DateTime dateOfPassing, int errorsCount, int assesment, double speed, int spendetTime)
         {
             this.exercise=exercise;
+            this.exerciseId = exercise.id; 
             this.dateOfPassing = dateOfPassing;
             this.errorsCount=errorsCount;
             this.assesment = assesment;
             this.speed = speed;
-            this.level = level;
+            this.level = exercise.level;
             this.spendetTime = spendetTime;
         }
 
