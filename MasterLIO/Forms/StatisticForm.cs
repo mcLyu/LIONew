@@ -35,7 +35,11 @@ namespace MasterLIO.Forms
             statisticChart1.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
             statisticChart1.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
 
-
+            errorCounttextBox3.Text = "";
+            exerciseSpeedtextBox4.Text = "";
+            assessmentTextBox5.Text = "";
+            exerciseNumbercomboBox1.Items.Clear();
+            exerciseNumbercomboBox1.Text = "";
         }
 
         public StatisticForm()
