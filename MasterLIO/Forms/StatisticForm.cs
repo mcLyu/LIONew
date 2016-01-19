@@ -16,27 +16,68 @@ namespace MasterLIO.Forms
         private static Statistic statistic = DBUtils.GetUserStatistic(Session.user.userId);
         List<UserProfile> users = DBUtils.LoadAllUsers();
         private List<ExerciseResultInfo> resultsInfo;
+        private List<ExerciseResultInfo> allUserStatistic;
+
+        private void updateChart(List<ExerciseResultInfo> resultsInfo)
+        {
+            statisticChart1.Series["Time"].Points.Clear();
+
+            resultsInfo.Sort((x, y) =>
+                    x.dateOfPassing.CompareTo(y.dateOfPassing));
+
+            foreach (ExerciseResultInfo result in resultsInfo)
+            {
+                statisticChart1.Series["Time"].Points.AddXY(result.dateOfPassing, result.assesment);
+            }
+
+            DateTime minDate = dateTimePicker1.Value.AddDays(-3);
+            DateTime maxDate = dateTimePicker1.Value.AddDays(3);
+            statisticChart1.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
+            statisticChart1.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
+
+
+        }
 
         public StatisticForm()
         {
             InitializeComponent();
             statisticChart1.Series["Time"].IsVisibleInLegend = false;
             statisticChart1.Series["Time"].BorderWidth = 3;
-            //statisticChart1.Series["Time"].
+
+
+
+            var d = new DateTime(2013, 04, 01);
+            statisticChart1.ChartAreas[0].AxisX.LabelStyle.Format = "yyyy-MM-dd";
+            statisticChart1.ChartAreas[0].AxisX.Interval = 1;
+            statisticChart1.ChartAreas[0].AxisX.IntervalOffset = 1;
+
+
+            statisticChart1.ChartAreas[0].AxisX.IsLabelAutoFit = true;
+            statisticChart1.ChartAreas[0].AxisX.LabelStyle.Enabled = true;
+
+
+
             if (Session.user.role == Role.ADMIN)
             {
                 comboBox1.Visible = true;
                 label7.Visible = true;
                 comboBox1.Items.AddRange(users.ToArray());
             }
-            // statisticChart1.Series["Series1"].Enabled = false;
             dateTimePicker1.Text = "";
 
         }
 
         private void statisticSearchButton1_Click(object sender, EventArgs e)
         {
+
+
+
             resultsInfo = statistic.getResultsByDate(dateTimePicker1.Value);
+            allUserStatistic = statistic.getResultsInfo();
+
+            updateChart(allUserStatistic);
+
+        
             if (resultsInfo != null)
             {
                 exerciseNumbercomboBox1.Items.Clear();
@@ -108,37 +149,19 @@ namespace MasterLIO.Forms
             statistic = DBUtils.GetUserStatistic(currentUser.userId);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            statisticChart1.Series["Time"].Points.AddXY(new DateTime(2016, 1, 16), 0);
-            statisticChart1.Series["Time"].Points.AddXY(new DateTime(2016, 1, 16), 1);
-            statisticChart1.Series["Time"].Points.AddXY(new DateTime(2016, 1, 17), 4);
-            statisticChart1.Series["Time"].Points.AddXY(new DateTime(2016, 1, 18), 5);
-            statisticChart1.Series["Time"].Points.AddXY(new DateTime(2016, 1, 19), 2);
-
-
-        }
-
         private void statisticChart1_MouseClick(object sender, MouseEventArgs e)
         {
-           var x =  statisticChart1.ChartAreas[0].AxisX.PixelPositionToValue(e.X);
-           var y =  statisticChart1.ChartAreas[0].AxisY.PixelPositionToValue(e.Y);
-           DateTime test = DateTime.FromOADate(x);
+            var x = statisticChart1.ChartAreas[0].AxisX.PixelPositionToValue(e.X);
+            var y = statisticChart1.ChartAreas[0].AxisY.PixelPositionToValue(e.Y);
+            DateTime test = DateTime.FromOADate(x);
+            dateTimePicker1.Value = test;
+
+            allUserStatistic = statistic.getResultsInfo();
+
+            updateChart(allUserStatistic);
         }
 
-        private void statisticChart1_Click(object sender, EventArgs e)
-        {
-
-        }
-        Point prevPosition;
-        ToolTip tooltip = new ToolTip();
-        private void statisticChart1_MouseMove(object sender, MouseEventArgs e)
-        {
-
-          
-
-        }
+  
 
     }
 }
