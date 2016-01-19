@@ -18,15 +18,16 @@ namespace MasterLIO
         public int spendetTime { get; set; }//время выполнения в секундах 
 
 
-        public ExerciseResultInfo(Exercise exercise, DateTime dateOfPassing, int errorsCount, int assesment)
+        public ExerciseResultInfo(Exercise exercise, DateTime dateOfPassing, int errorsCount, int assesment, double speed, int spendetTime, int level)
         {
             this.exercise = exercise;
+            this.exerciseId = exercise.id; 
             this.dateOfPassing = dateOfPassing;
             this.errorsCount = errorsCount;
             this.assesment = assesment;
-            this.speed = 0;
-            this.level = 0;
-            this.spendetTime = 0;
+            this.speed = speed;
+            this.level = exercise.level;
+            this.spendetTime = spendetTime;
         }
 
         public ExerciseResultInfo(Exercise exercise, DateTime dateOfPassing, int errorsCount, int assesment, double speed, int spendetTime)
@@ -41,7 +42,7 @@ namespace MasterLIO
             this.spendetTime = spendetTime;
         }
 
-        public ExerciseResultInfo(int exerciseId, DateTime dateOfPassing, int errorsCount, int assesment, double speed, int spendetTime)
+        public ExerciseResultInfo(int exerciseId, DateTime dateOfPassing, int errorsCount, int assesment, double speed, int spendetTime,int level)
         {
             this.exerciseId = exerciseId;
             this.dateOfPassing = dateOfPassing;

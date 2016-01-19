@@ -279,7 +279,7 @@ namespace MasterLIO
                 double speed = Convert.ToDouble(reader["speed"]);
                 int errors = Convert.ToInt32(reader["errors"]);
                 int spendetTime = Convert.ToInt32(reader["spendetTime"]);
-                resultInfo = new ExerciseResultInfo(exerciseId, dateOfPassing, errors, assesment, speed, spendetTime);
+                resultInfo = new ExerciseResultInfo(exerciseId, dateOfPassing, errors, assesment, speed, spendetTime,level);
                 results.Add(resultInfo);
             }
 
