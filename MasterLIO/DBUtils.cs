@@ -122,7 +122,7 @@ namespace MasterLIO
 
         private static string generateExerciseID(Exercise exercise)
         {
-            //connection.Open();
+            connection.Open();
             command = new SQLiteCommand("SELECT * FROM 'Exercise' WHERE level = @param1 ORDER BY exercise_id DESC;", connection);
             command.Parameters.Add(new SQLiteParameter("@param1", exercise.level)); ;
 
@@ -138,21 +138,21 @@ namespace MasterLIO
                 exercise_id = exercise.level.ToString() + lastId.ToString();
             }
             else exercise_id = exercise.level.ToString() + "1";
-
+            reader.Close();
             
 
-            //connection.Close();
+            connection.Close();
 
             return exercise_id;
         }
 
         public static void SaveExercise(Exercise exercise)
         {
-            connection.Open();
+            
             string exercise_id = generateExerciseID(exercise);
 
 
-
+            connection.Open();
             command = new SQLiteCommand("INSERT INTO Exercise (max_time,max_errors,name,text,keyboard_areas,level,exercise_id) VALUES (@param1,@param2,@param3,@param4,@param5,@param6,@param7)", connection);
             command.Parameters.Add(new SQLiteParameter("@param1", exercise.maxTime));
             command.Parameters.Add(new SQLiteParameter("@param2", exercise.maxErrors));

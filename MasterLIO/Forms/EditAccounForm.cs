@@ -12,12 +12,13 @@ namespace MasterLIO.Forms
 {
     public partial class EditAccounForm : Form
     {
+        List<UserProfile> users;
         public EditAccounForm()
         {
             InitializeComponent();
             passwordtextBox2.UseSystemPasswordChar = true;
 
-            List<UserProfile> users = DBUtils.LoadAllUsers();
+            users = DBUtils.LoadAllUsers();
             userlistBox1.Items.AddRange(users.ToArray());
 
             rolecomboBox1.Items.Add(Role.ADMIN);
@@ -104,6 +105,18 @@ namespace MasterLIO.Forms
             DBUtils.RemoveUser(selectedUser);
             DBUtils.RegisterUser(login, password, role);
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            userlistBox1.Items.Clear();
+            foreach(UserProfile user in users)
+            {
+                if (user.login.Contains(textBox1.Text))
+                {
+                    userlistBox1.Items.Add(user);
+                }
+            }
         }
 
 

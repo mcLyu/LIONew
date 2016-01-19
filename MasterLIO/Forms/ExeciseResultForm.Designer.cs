@@ -58,9 +58,9 @@
             this.groupBox1.Controls.Add(this.time);
             this.groupBox1.Controls.Add(this.wrongNumber);
             this.groupBox1.Location = new System.Drawing.Point(20, 63);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(215, 162);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
@@ -120,10 +120,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(267, 263);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
+            this.button2.Location = new System.Drawing.Point(235, 263);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
+            this.button2.Size = new System.Drawing.Size(132, 46);
             this.button2.TabIndex = 8;
             this.button2.Text = "Завершить";
             this.button2.UseVisualStyleBackColor = true;
@@ -131,10 +132,11 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
             this.button1.Location = new System.Drawing.Point(13, 263);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(129, 46);
             this.button1.TabIndex = 7;
             this.button1.Text = "Заново";
             this.button1.UseVisualStyleBackColor = true;
@@ -153,10 +155,10 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ExeciseResultForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ExeciseResultForm";
+            this.Text = "Оценка";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExeciseResultForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

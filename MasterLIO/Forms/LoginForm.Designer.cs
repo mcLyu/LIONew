@@ -61,7 +61,7 @@
             // 
             this.loginField.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.loginField.Location = new System.Drawing.Point(167, 61);
-            this.loginField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginField.Margin = new System.Windows.Forms.Padding(4);
             this.loginField.Name = "loginField";
             this.loginField.Size = new System.Drawing.Size(251, 41);
             this.loginField.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             this.passwordField.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.passwordField.Location = new System.Drawing.Point(167, 138);
-            this.passwordField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordField.Margin = new System.Windows.Forms.Padding(4);
             this.passwordField.Name = "passwordField";
             this.passwordField.PasswordChar = '*';
             this.passwordField.Size = new System.Drawing.Size(251, 41);
@@ -82,7 +82,7 @@
             // 
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.loginButton.Location = new System.Drawing.Point(318, 211);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(4);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(119, 51);
             this.loginButton.TabIndex = 4;
@@ -102,10 +102,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "Авторизация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

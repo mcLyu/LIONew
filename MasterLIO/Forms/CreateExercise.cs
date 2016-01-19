@@ -110,7 +110,7 @@ namespace MasterLIO.Forms
                 Exercise exercise = new Exercise(name, text, areas, maxErrors, maxTime, level);
                 DBUtils.SaveExercise(exercise);
                 MessageBox.Show("Упражнение создано успешно.", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-       
+                
             }
             else MessageBox.Show("Проверьте настройки параметров!");
         }

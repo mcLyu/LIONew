@@ -39,7 +39,7 @@
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.exitButton.Location = new System.Drawing.Point(85, 289);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(379, 62);
             this.exitButton.TabIndex = 5;
@@ -51,7 +51,7 @@
             // 
             this.statistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.statistic.Location = new System.Drawing.Point(85, 82);
-            this.statistic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.statistic.Margin = new System.Windows.Forms.Padding(4);
             this.statistic.Name = "statistic";
             this.statistic.Size = new System.Drawing.Size(379, 62);
             this.statistic.TabIndex = 4;
@@ -63,7 +63,7 @@
             // 
             this.ExerciseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.ExerciseButton.Location = new System.Drawing.Point(85, 13);
-            this.ExerciseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExerciseButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExerciseButton.Name = "ExerciseButton";
             this.ExerciseButton.Size = new System.Drawing.Size(379, 62);
             this.ExerciseButton.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             this.CreateExercsieButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.CreateExercsieButton.Location = new System.Drawing.Point(85, 151);
-            this.CreateExercsieButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateExercsieButton.Margin = new System.Windows.Forms.Padding(4);
             this.CreateExercsieButton.Name = "CreateExercsieButton";
             this.CreateExercsieButton.Size = new System.Drawing.Size(379, 62);
             this.CreateExercsieButton.TabIndex = 6;
@@ -87,7 +87,7 @@
             // 
             this.EditAccountButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
             this.EditAccountButton.Location = new System.Drawing.Point(85, 220);
-            this.EditAccountButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditAccountButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditAccountButton.Name = "EditAccountButton";
             this.EditAccountButton.Size = new System.Drawing.Size(379, 62);
             this.EditAccountButton.TabIndex = 7;
@@ -107,10 +107,10 @@
             this.Controls.Add(this.statistic);
             this.Controls.Add(this.ExerciseButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminMenuForm";
+            this.Text = "Меню";
             this.ResumeLayout(false);
 
         }

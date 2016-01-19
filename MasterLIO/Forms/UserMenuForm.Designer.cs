@@ -82,7 +82,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UserMenu";
+            this.Text = "Меню";
             this.ResumeLayout(false);
 
         }

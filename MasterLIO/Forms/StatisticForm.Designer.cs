@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -96,10 +96,11 @@
             // 
             // statisticSearchButton1
             // 
+            this.statisticSearchButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.statisticSearchButton1.Location = new System.Drawing.Point(397, 273);
             this.statisticSearchButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.statisticSearchButton1.Name = "statisticSearchButton1";
-            this.statisticSearchButton1.Size = new System.Drawing.Size(147, 34);
+            this.statisticSearchButton1.Size = new System.Drawing.Size(196, 53);
             this.statisticSearchButton1.TabIndex = 5;
             this.statisticSearchButton1.Text = "Найти";
             this.statisticSearchButton1.UseVisualStyleBackColor = true;
@@ -107,28 +108,28 @@
             // 
             // statisticChart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.statisticChart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.statisticChart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.statisticChart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.statisticChart1.Legends.Add(legend2);
             this.statisticChart1.Location = new System.Drawing.Point(363, 11);
             this.statisticChart1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.statisticChart1.Name = "statisticChart1";
             this.statisticChart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.statisticChart1.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.Red};
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.IsVisibleInLegend = false;
-            series1.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            series1.LabelBorderColor = System.Drawing.Color.Red;
-            series1.Legend = "Legend1";
-            series1.MarkerColor = System.Drawing.Color.Red;
-            series1.MarkerSize = 10;
-            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series1.Name = "Time";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            this.statisticChart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.IsVisibleInLegend = false;
+            series2.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series2.LabelBorderColor = System.Drawing.Color.Red;
+            series2.Legend = "Legend1";
+            series2.MarkerColor = System.Drawing.Color.Red;
+            series2.MarkerSize = 10;
+            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series2.Name = "Time";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            this.statisticChart1.Series.Add(series2);
             this.statisticChart1.Size = new System.Drawing.Size(423, 241);
             this.statisticChart1.TabIndex = 6;
             this.statisticChart1.Text = "chart1";
