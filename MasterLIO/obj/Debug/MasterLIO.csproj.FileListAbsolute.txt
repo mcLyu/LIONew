@@ -81,3 +81,4 @@ C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Forms.UserMenuF
 C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.LoginForm.resources
 C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Properties.Resources.resources
 C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.csproj.GenerateResource.Cache
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.csprojResolveAssemblyReference.cache

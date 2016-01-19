@@ -216,8 +216,10 @@ namespace MasterLIO.Forms
             if (points.ContainsKey(keyChar))
             {
                 Point point = points[keyChar];
-                Pen pen = new Pen(Brushes.Firebrick, 5); 
+                Pen pen = new Pen(Brushes.Indigo, 5); 
+                if (keyChar != ' ')
                 g.DrawPolygon(pen, new Point[] { point, new Point(point.X + 30, point.Y), new Point(point.X + 30, point.Y + 30), new Point(point.X, point.Y + 30) });
+                else g.DrawPolygon(pen, new Point[] { point, new Point(point.X + 250, point.Y), new Point(point.X + 250, point.Y + 30), new Point(point.X, point.Y + 30) });
             }
                 if (isRuning && listBox1.Items.Count > 0)
                 {
@@ -247,7 +249,7 @@ namespace MasterLIO.Forms
                     speed.Text = "Скорость: " + Math.Round(speedDouble, 1) + "сим/c";
 
                 }
-                Thread.Sleep(300);
+                Thread.Sleep(100);
                 pictureBox1.Invalidate();
 
         }
@@ -300,12 +302,23 @@ namespace MasterLIO.Forms
             points.Add('ч', new Point(224, 106));
             points.Add('ш', new Point(419, 43));
             points.Add('щ', new Point(456, 43));
-            points.Add('ъ', new Point(564, 42));
+            points.Add('ъ', new Point(574, 42));
             points.Add('ы', new Point(204, 76));
             points.Add('ь', new Point(415, 108));
             points.Add('э', new Point(548, 75));
             points.Add('ю', new Point(489, 109));
             points.Add('я', new Point(187, 109));
+            points.Add('1', new Point(135, 12));
+            points.Add('2', new Point(175, 12));
+            points.Add('3', new Point(215, 12));
+            points.Add('4', new Point(255, 12));
+            points.Add('5', new Point(290, 12));
+            points.Add('6', new Point(330, 12));
+            points.Add('7', new Point(365, 12));
+            points.Add('8', new Point(403, 12));
+            points.Add('9', new Point(442, 12));
+            points.Add('0', new Point(481, 12));
+            points.Add(' ', new Point(230, 140));
         }
 
 
