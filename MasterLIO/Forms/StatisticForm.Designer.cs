@@ -52,59 +52,54 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 51);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(8, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(139, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Номер упражнения:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 82);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(5, 101);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 13);
+            this.label2.Size = new System.Drawing.Size(137, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Дата прохождения:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 113);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(5, 139);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.Size = new System.Drawing.Size(111, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Кол-во ошибок:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 155);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(15, 191);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.Size = new System.Drawing.Size(73, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Скорость:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 188);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(15, 231);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.Size = new System.Drawing.Size(62, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Оценка:";
             // 
             // statisticSearchButton1
             // 
-            this.statisticSearchButton1.Location = new System.Drawing.Point(298, 222);
-            this.statisticSearchButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.statisticSearchButton1.Location = new System.Drawing.Point(397, 273);
+            this.statisticSearchButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.statisticSearchButton1.Name = "statisticSearchButton1";
-            this.statisticSearchButton1.Size = new System.Drawing.Size(110, 28);
+            this.statisticSearchButton1.Size = new System.Drawing.Size(147, 34);
             this.statisticSearchButton1.TabIndex = 5;
             this.statisticSearchButton1.Text = "Найти";
             this.statisticSearchButton1.UseVisualStyleBackColor = true;
@@ -116,8 +111,8 @@
             this.statisticChart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.statisticChart1.Legends.Add(legend1);
-            this.statisticChart1.Location = new System.Drawing.Point(272, 9);
-            this.statisticChart1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.statisticChart1.Location = new System.Drawing.Point(363, 11);
+            this.statisticChart1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.statisticChart1.Name = "statisticChart1";
             this.statisticChart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.statisticChart1.PaletteCustomColors = new System.Drawing.Color[] {
@@ -134,7 +129,7 @@
             series1.Name = "Time";
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
             this.statisticChart1.Series.Add(series1);
-            this.statisticChart1.Size = new System.Drawing.Size(317, 196);
+            this.statisticChart1.Size = new System.Drawing.Size(423, 241);
             this.statisticChart1.TabIndex = 6;
             this.statisticChart1.Text = "chart1";
             this.statisticChart1.Click += new System.EventHandler(this.statisticChart1_Click);
@@ -143,56 +138,55 @@
             // 
             // errorCounttextBox3
             // 
-            this.errorCounttextBox3.Location = new System.Drawing.Point(118, 113);
-            this.errorCounttextBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.errorCounttextBox3.Location = new System.Drawing.Point(157, 139);
+            this.errorCounttextBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.errorCounttextBox3.Name = "errorCounttextBox3";
             this.errorCounttextBox3.ReadOnly = true;
-            this.errorCounttextBox3.Size = new System.Drawing.Size(150, 20);
+            this.errorCounttextBox3.Size = new System.Drawing.Size(199, 22);
             this.errorCounttextBox3.TabIndex = 9;
             // 
             // exerciseSpeedtextBox4
             // 
-            this.exerciseSpeedtextBox4.Location = new System.Drawing.Point(118, 148);
-            this.exerciseSpeedtextBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exerciseSpeedtextBox4.Location = new System.Drawing.Point(157, 182);
+            this.exerciseSpeedtextBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.exerciseSpeedtextBox4.Name = "exerciseSpeedtextBox4";
             this.exerciseSpeedtextBox4.ReadOnly = true;
-            this.exerciseSpeedtextBox4.Size = new System.Drawing.Size(150, 20);
+            this.exerciseSpeedtextBox4.Size = new System.Drawing.Size(199, 22);
             this.exerciseSpeedtextBox4.TabIndex = 10;
             // 
             // assessmentTextBox5
             // 
-            this.assessmentTextBox5.Location = new System.Drawing.Point(118, 185);
-            this.assessmentTextBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assessmentTextBox5.Location = new System.Drawing.Point(157, 228);
+            this.assessmentTextBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.assessmentTextBox5.Name = "assessmentTextBox5";
             this.assessmentTextBox5.ReadOnly = true;
-            this.assessmentTextBox5.Size = new System.Drawing.Size(150, 20);
+            this.assessmentTextBox5.Size = new System.Drawing.Size(199, 22);
             this.assessmentTextBox5.TabIndex = 11;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(118, 76);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(157, 94);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(150, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(199, 22);
             this.dateTimePicker1.TabIndex = 12;
             // 
             // exerciseNumbercomboBox1
             // 
             this.exerciseNumbercomboBox1.FormattingEnabled = true;
-            this.exerciseNumbercomboBox1.Location = new System.Drawing.Point(118, 48);
-            this.exerciseNumbercomboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exerciseNumbercomboBox1.Location = new System.Drawing.Point(157, 59);
+            this.exerciseNumbercomboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.exerciseNumbercomboBox1.Name = "exerciseNumbercomboBox1";
-            this.exerciseNumbercomboBox1.Size = new System.Drawing.Size(150, 21);
+            this.exerciseNumbercomboBox1.Size = new System.Drawing.Size(199, 24);
             this.exerciseNumbercomboBox1.TabIndex = 13;
             this.exerciseNumbercomboBox1.SelectedIndexChanged += new System.EventHandler(this.exerciseNumbercomboBox1_SelectedIndexChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 26);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(12, 32);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 13);
+            this.label7.Size = new System.Drawing.Size(101, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "Пользователь";
             this.label7.Visible = false;
@@ -200,19 +194,20 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 23);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Location = new System.Drawing.Point(157, 28);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 21);
+            this.comboBox1.Size = new System.Drawing.Size(199, 24);
             this.comboBox1.TabIndex = 14;
             this.comboBox1.Visible = false;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(514, 222);
+            this.button1.Location = new System.Drawing.Point(685, 273);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 15;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -220,9 +215,10 @@
             // 
             // StatisticForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 274);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(804, 337);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.exerciseNumbercomboBox1);
@@ -238,7 +234,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "StatisticForm";
             this.Text = "StatisticForm";
             ((System.ComponentModel.ISupportInitialize)(this.statisticChart1)).EndInit();

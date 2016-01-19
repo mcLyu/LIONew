@@ -35,9 +35,11 @@
             // 
             // ExerciseButton
             // 
-            this.ExerciseButton.Location = new System.Drawing.Point(12, 72);
+            this.ExerciseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
+            this.ExerciseButton.Location = new System.Drawing.Point(13, 32);
+            this.ExerciseButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExerciseButton.Name = "ExerciseButton";
-            this.ExerciseButton.Size = new System.Drawing.Size(284, 50);
+            this.ExerciseButton.Size = new System.Drawing.Size(379, 62);
             this.ExerciseButton.TabIndex = 0;
             this.ExerciseButton.Text = "Упражнение";
             this.ExerciseButton.UseVisualStyleBackColor = true;
@@ -45,9 +47,11 @@
             // 
             // statistic
             // 
-            this.statistic.Location = new System.Drawing.Point(12, 128);
+            this.statistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
+            this.statistic.Location = new System.Drawing.Point(13, 101);
+            this.statistic.Margin = new System.Windows.Forms.Padding(4);
             this.statistic.Name = "statistic";
-            this.statistic.Size = new System.Drawing.Size(284, 50);
+            this.statistic.Size = new System.Drawing.Size(379, 62);
             this.statistic.TabIndex = 1;
             this.statistic.Text = "Статистика";
             this.statistic.UseVisualStyleBackColor = true;
@@ -55,9 +59,11 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(12, 184);
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
+            this.exitButton.Location = new System.Drawing.Point(13, 169);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(284, 50);
+            this.exitButton.Size = new System.Drawing.Size(379, 62);
             this.exitButton.TabIndex = 2;
             this.exitButton.Text = "Выход";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -65,13 +71,15 @@
             // 
             // UserMenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 284);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(399, 252);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.statistic);
             this.Controls.Add(this.ExerciseButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserMenu";
