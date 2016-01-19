@@ -52,12 +52,13 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 135;
             this.listBox1.Location = new System.Drawing.Point(16, 46);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.MultiColumn = true;
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(751, 139);
             this.listBox1.TabIndex = 12;
             this.listBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBox1_KeyPress);
+//            this.listBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyUp);
             // 
             // statusStrip1
             // 
@@ -103,7 +104,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(10, 238);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(757, 215);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -132,12 +133,13 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "ExerciseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Выполнение упражнения";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBox1_KeyPress);
+    //        this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyUp);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

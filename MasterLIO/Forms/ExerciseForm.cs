@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 
 namespace MasterLIO.Forms
 {
@@ -206,43 +207,48 @@ namespace MasterLIO.Forms
         }
 
 
-
+        Graphics g;
         private void listBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            Char keyChar = e.KeyChar;
+            g = pictureBox1.CreateGraphics();
 
-
-            //Point point = points[keyChar];
-            //Graphics g = pictureBox1.CreateGraphics();
-            //g.DrawPolygon(Pens.Beige, new Point[] { point, new Point(point.X + 20, point.Y), new Point(point.X + 20, point.Y + 20), new Point(point.X, point.Y + 20) });
-
-            if (isRuning && listBox1.Items.Count > 0)
+            if (points.ContainsKey(keyChar))
             {
-
-                Char keyChar = e.KeyChar;
-                Char firstChar = Convert.ToChar(listBox1.Items[0]);
-
-                if (firstChar.Equals(keyChar))
-                {
-                    listBox1.Items.Remove(listBox1.Items[0]);
-                    listBox1.Refresh();
-                    stats.Update(true);
-                    difficultyProgressBar.Value = stats.Correct;
-                }
-                else
-                {
-                    if (stats.Missed <= exercise.maxErrors)
-                    {
-                        stats.Update(false);
-                        mistake = true;
-                        timer2.Start();
-                    }
-                }
-                double speedDouble = (double)stats.Total / watch.Elapsed.Seconds;
-                lblCorrect.Text = "Правильно: " + stats.Correct;
-                lblMissed.Text = "Ошибок: " + stats.Missed;
-                speed.Text = "Скорость: " + Math.Round(speedDouble, 1) + "сим/c";
-
+                Point point = points[keyChar];
+                Pen pen = new Pen(Brushes.Firebrick, 5); 
+                g.DrawPolygon(pen, new Point[] { point, new Point(point.X + 30, point.Y), new Point(point.X + 30, point.Y + 30), new Point(point.X, point.Y + 30) });
             }
+                if (isRuning && listBox1.Items.Count > 0)
+                {
+
+                
+                    Char firstChar = Convert.ToChar(listBox1.Items[0]);
+
+                    if (firstChar.Equals(keyChar))
+                    {
+                        listBox1.Items.Remove(listBox1.Items[0]);
+                        listBox1.Refresh();
+                        stats.Update(true);
+                        difficultyProgressBar.Value = stats.Correct;
+                    }
+                    else
+                    {
+                        if (stats.Missed <= exercise.maxErrors)
+                        {
+                            stats.Update(false);
+                            mistake = true;
+                            timer2.Start();
+                        }
+                    }
+                    double speedDouble = (double)stats.Total / watch.Elapsed.Seconds;
+                    lblCorrect.Text = "Правильно: " + stats.Correct;
+                    lblMissed.Text = "Ошибок: " + stats.Missed;
+                    speed.Text = "Скорость: " + Math.Round(speedDouble, 1) + "сим/c";
+
+                }
+                Thread.Sleep(300);
+                pictureBox1.Invalidate();
 
         }
 
@@ -277,42 +283,47 @@ namespace MasterLIO.Forms
             points.Add('ж', new Point(510, 77));
             points.Add('з', new Point(496, 44));
             points.Add('и', new Point(339, 108));
-            points.Add('к', new Point(154, 43));
-            points.Add('л', new Point(268, 44));
-            points.Add('м', new Point(434, 76));
-            points.Add('н', new Point(300, 109));
-            points.Add('о', new Point(344, 44));
-            points.Add('п', new Point());
-            points.Add('р', new Point());
-            points.Add('с', new Point());
-            points.Add('т', new Point());
-            points.Add('у', new Point());
-            points.Add('ф', new Point());
-            points.Add('х', new Point());
-            points.Add('ц', new Point());
-            points.Add('ч', new Point());
-            points.Add('ш', new Point());
-            points.Add('щ', new Point());
-            points.Add('ъ', new Point());
-            points.Add('ы', new Point());
-            points.Add('ь', new Point());
-            points.Add('э', new Point());
-            points.Add('ю', new Point());
-            points.Add('я', new Point());
+            points.Add('й', new Point(153, 43));
+            points.Add('к', new Point(268, 43));
+            points.Add('л', new Point(431, 75));
+            points.Add('м', new Point(300, 108));
+            points.Add('н', new Point(342, 42));
+            points.Add('о', new Point(395, 76));
+            points.Add('п', new Point(319, 76));
+            points.Add('р', new Point(357, 75));
+            points.Add('с', new Point(263, 109));
+            points.Add('т', new Point(375, 108));
+            points.Add('у', new Point(229, 44));
+            points.Add('ф', new Point(168, 76));
+            points.Add('х', new Point(534, 42));
+            points.Add('ц', new Point(192, 43));
+            points.Add('ч', new Point(224, 106));
+            points.Add('ш', new Point(419, 43));
+            points.Add('щ', new Point(456, 43));
+            points.Add('ъ', new Point(564, 42));
+            points.Add('ы', new Point(204, 76));
+            points.Add('ь', new Point(415, 108));
+            points.Add('э', new Point(548, 75));
+            points.Add('ю', new Point(489, 109));
+            points.Add('я', new Point(187, 109));
         }
 
-        String stringPoints = "";
-        private void button1_Click(object sender, EventArgs e)
+
+        /*String stringPoints = "";
+
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             File.WriteAllText("ппцнах.txt", stringPoints);
         }
 
-        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        private void pictureBox1_MouseClick_1(object sender, MouseEventArgs e)
         {
             stringPoints += " " + e.X;
             stringPoints += "," + e.Y;
             stringPoints += "    ";
-        }
+        }*/
+
 
     }
 
