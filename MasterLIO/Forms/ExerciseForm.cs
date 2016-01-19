@@ -87,6 +87,32 @@ namespace MasterLIO.Forms
 
             double speedDouble = (double)stats.Total / watch.Elapsed.Seconds;
 
+
+            if (watch.Elapsed.Seconds> exercise.maxTime)
+            {
+                listBox1.Items.Clear();
+                listBox1.Items.Add("Time is out.");
+                assigment = 0;
+                isRuning = false;
+                timer1.Stop();
+                watch.Stop();
+
+                Session.CurrentResultInfo = new ExerciseResultInfo(exercise, DateTime.Today, stats.Missed, assigment, Math.Round(speedDouble, 1), watch.Elapsed.Seconds);
+                ExeciseResultForm execiseResult = new ExeciseResultForm();
+                execiseResult.ShowDialog();
+                int command = execiseResult.getCommand();
+                execiseResult.Close();
+                if (command == 1)
+                {
+                    clearAll();
+                }
+
+                if (command == 2)
+                {
+                    this.Close();
+                }
+            }
+
             if (stats.Missed >= exercise.maxErrors && stats.Missed != 0)
             {
                 listBox1.Items.Clear();
