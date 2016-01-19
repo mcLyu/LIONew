@@ -21,7 +21,7 @@ namespace MasterLIO
         {
             this.name = "Sample";
             this.text = "aaa";
-            
+
             List<KeyboardArea> sampleAreas = new List<KeyboardArea>();
             sampleAreas.Add(KeyboardArea.NINE);
             sampleAreas.Add(KeyboardArea.ONE);
@@ -33,7 +33,7 @@ namespace MasterLIO
             this.length = this.text.Length;
         }
 
-        public Exercise(String name, String text, List<KeyboardArea> areas, int maxErrors) 
+        public Exercise(String name, String text, List<KeyboardArea> areas, int maxErrors)
         {
             this.name = name;
             this.text = text;
@@ -43,7 +43,7 @@ namespace MasterLIO
             this.length = text.Length;
         }
 
-        public Exercise(String name, String text, List<KeyboardArea> areas, int maxErrors, int maxTime) 
+        public Exercise(String name, String text, List<KeyboardArea> areas, int maxErrors, int maxTime)
         {
             this.name = name;
             this.text = text;
@@ -65,7 +65,7 @@ namespace MasterLIO
             this.length = text.Length;
         }
 
-        public Exercise(String name, String text, List<KeyboardArea> areas, int maxErrors, int maxTime,int level)
+        public Exercise(String name, String text, List<KeyboardArea> areas, int maxErrors, int maxTime, int level)
         {
             this.name = name;
             this.text = text;
@@ -90,7 +90,7 @@ namespace MasterLIO
             this.length = text.Length;
         }
 
-        public Exercise(int id, string name,string text,List<KeyboardArea> listAreas, int maxErrors, int maxTime,int level)
+        public Exercise(int id, string name, string text, List<KeyboardArea> listAreas, int maxErrors, int maxTime, int level)
         {
             this.id = id;
             this.name = name;
@@ -125,7 +125,7 @@ namespace MasterLIO
         public List<Char> getTextsAsArrayChar()
         {
             List<Char> arrayChar = new List<Char>();
-            for (int i = 0; i < this.text.Length;i++ )
+            for (int i = 0; i < this.text.Length; i++)
             {
                 arrayChar.Add(this.text[i]);
             }
@@ -147,13 +147,29 @@ namespace MasterLIO
             return nums;
         }
 
+        public static String getAreasAsNums(String areas)
+        {
+            String nums = "";
+            if (areas.Contains("1")) nums += KeyboardArea.ONE.ToString() + " ";
+            if (areas.Contains("2")) nums += KeyboardArea.TWO.ToString() + " ";
+            if (areas.Contains("3")) nums += KeyboardArea.THREE.ToString() + " ";
+            if (areas.Contains("4")) nums += KeyboardArea.FOUR.ToString() + " ";
+            if (areas.Contains("5")) nums += KeyboardArea.FIVE.ToString() + " ";
+            if (areas.Contains("6")) nums += KeyboardArea.SIX.ToString() + " ";
+            if (areas.Contains("7")) nums += KeyboardArea.SEVEN.ToString() + " ";
+            if (areas.Contains("8")) nums += KeyboardArea.EIGHT.ToString() + " ";
+            if (areas.Contains("9")) nums += KeyboardArea.NINE.ToString() + " ";
+            return nums;
+        }
+
         public static List<KeyboardArea> getAreasList(String areas)
         {
             List<KeyboardArea> enumAreas = new List<KeyboardArea>();
 
-            string[] areasList = areas.Split(new Char [] {' '});
-            
-            foreach (string area in areasList){
+            string[] areasList = areas.Split(new Char[] { ' ' });
+
+            foreach (string area in areasList)
+            {
                 if (System.Enum.IsDefined(typeof(KeyboardArea), area))
                 {
                     KeyboardArea enumArea = (KeyboardArea)Enum.Parse(typeof(KeyboardArea), area);
@@ -163,6 +179,7 @@ namespace MasterLIO
 
             return enumAreas;
         }
+
     }
 
     public enum KeyboardArea { ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE }//девять зон клавиатуры

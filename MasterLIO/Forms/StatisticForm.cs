@@ -17,6 +17,7 @@ namespace MasterLIO.Forms
         List<UserProfile> users = DBUtils.LoadAllUsers();
         private List<ExerciseResultInfo> resultsInfo;
         private List<ExerciseResultInfo> allUserStatistic;
+        Dictionary<String, ExerciseResultInfo> showResults = new Dictionary<string, ExerciseResultInfo>();
 
         private void updateChart(List<ExerciseResultInfo> resultsInfo)
         {
@@ -38,7 +39,6 @@ namespace MasterLIO.Forms
             errorCounttextBox3.Text = "";
             exerciseSpeedtextBox4.Text = "";
             assessmentTextBox5.Text = "";
-            exerciseNumbercomboBox1.Items.Clear();
             exerciseNumbercomboBox1.Text = "";
         }
 
@@ -69,20 +69,38 @@ namespace MasterLIO.Forms
         private void statisticSearchButton1_Click(object sender, EventArgs e)
         {
             resultsInfo = statistic.getResultsByDate(dateTimePicker1.Value);
-            allUserStatistic = statistic.getResultsInfo();
-
-            updateChart(allUserStatistic);
-
-
+            List<int> checkNums = new List<int>();
+            showResults.Clear();
             if (resultsInfo != null)
             {
                 exerciseNumbercomboBox1.Items.Clear();
                 exerciseNumbercomboBox1.Text = "";
+                int i = 0;
                 foreach (ExerciseResultInfo result in resultsInfo)
                 {
+                    i++;
+                    String currentListName = "";
                     String level = result.level.ToString();
                     String exerciseNum = result.exerciseId.ToString().Substring(1);// MAGIC!
-                    exerciseNumbercomboBox1.Items.Add("№" + exerciseNum + ", ур-нь " + level);
+                    int id = Convert.ToInt32(level + exerciseNum);
+
+                    if (checkNums.Contains(id))
+                    {
+                        int j = 0;
+                        foreach (ExerciseResultInfo eqResult in showResults.Values)
+                        {
+                            if (eqResult.exerciseId == id)
+                            {
+                                j++;
+                            }
+                        }
+                        currentListName = "№" + exerciseNum + ", ур-нь " + level + " Попытка " + j;
+                    }
+                    else currentListName = "№" + exerciseNum + ", ур-нь " + level;
+                    exerciseNumbercomboBox1.Items.Add(currentListName);
+                    
+                    showResults.Add(currentListName, result);
+                    checkNums.Add(id);
                 }
             }
             else
@@ -90,13 +108,15 @@ namespace MasterLIO.Forms
                 exerciseNumbercomboBox1.Items.Clear();
                 exerciseNumbercomboBox1.Text = "";
             }
+
+            allUserStatistic = statistic.getResultsInfo();
+
+            updateChart(allUserStatistic);
         }
 
         private void exerciseNumbercomboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            exerciseNumbercomboBox1.Text = "";
-            int exerciseNum = Convert.ToInt32(convertToExersiceId(exerciseNumbercomboBox1.SelectedItem.ToString()));
-            ExerciseResultInfo currentResultInfo = getResultInfoByNum(exerciseNum);
+            ExerciseResultInfo currentResultInfo = showResults[exerciseNumbercomboBox1.SelectedItem.ToString()];
             errorCounttextBox3.Text = currentResultInfo.errorsCount.ToString();
             exerciseSpeedtextBox4.Text = currentResultInfo.speed.ToString();
             assessmentTextBox5.Text = currentResultInfo.assesment.ToString();

@@ -23,8 +23,21 @@ namespace MasterLIO.Forms
             this.areasList = areasList;
             points = new List<Point>();
             pictureBox1.Load("2.jpg");
+            checkOldAreas();
         }
 
+        private void checkOldAreas()
+        {
+            if (areasList.Contains(KeyboardArea.ONE)) checkBox1.Checked = true;
+            if (areasList.Contains(KeyboardArea.TWO)) checkBox2.Checked = true;
+            if (areasList.Contains(KeyboardArea.THREE)) checkBox3.Checked = true;
+            if (areasList.Contains(KeyboardArea.FOUR)) checkBox4.Checked = true;
+            if (areasList.Contains(KeyboardArea.FIVE)) checkBox5.Checked = true;
+            if (areasList.Contains(KeyboardArea.SIX)) checkBox6.Checked = true;
+            if (areasList.Contains(KeyboardArea.SEVEN)) checkBox7.Checked = true;
+            if (areasList.Contains(KeyboardArea.EIGHT)) checkBox8.Checked = true;
+            if (areasList.Contains(KeyboardArea.NINE)) checkBox9.Checked = true;
+        }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {

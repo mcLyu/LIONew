@@ -42,9 +42,10 @@
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
-            this.exitButton.Location = new System.Drawing.Point(72, 268);
+            this.exitButton.Location = new System.Drawing.Point(96, 330);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(284, 50);
+            this.exitButton.Size = new System.Drawing.Size(379, 62);
             this.exitButton.TabIndex = 5;
             this.exitButton.Text = "Выход";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -53,9 +54,10 @@
             // statistic
             // 
             this.statistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
-            this.statistic.Location = new System.Drawing.Point(72, 89);
+            this.statistic.Location = new System.Drawing.Point(96, 110);
+            this.statistic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.statistic.Name = "statistic";
-            this.statistic.Size = new System.Drawing.Size(284, 50);
+            this.statistic.Size = new System.Drawing.Size(379, 62);
             this.statistic.TabIndex = 4;
             this.statistic.Text = "Статистика";
             this.statistic.UseVisualStyleBackColor = true;
@@ -64,9 +66,10 @@
             // ExerciseButton
             // 
             this.ExerciseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
-            this.ExerciseButton.Location = new System.Drawing.Point(72, 33);
+            this.ExerciseButton.Location = new System.Drawing.Point(96, 41);
+            this.ExerciseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ExerciseButton.Name = "ExerciseButton";
-            this.ExerciseButton.Size = new System.Drawing.Size(284, 50);
+            this.ExerciseButton.Size = new System.Drawing.Size(379, 62);
             this.ExerciseButton.TabIndex = 3;
             this.ExerciseButton.Text = "Упражнение";
             this.ExerciseButton.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@
             // CreateExercsieButton
             // 
             this.CreateExercsieButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
-            this.CreateExercsieButton.Location = new System.Drawing.Point(72, 145);
+            this.CreateExercsieButton.Location = new System.Drawing.Point(96, 178);
+            this.CreateExercsieButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CreateExercsieButton.Name = "CreateExercsieButton";
-            this.CreateExercsieButton.Size = new System.Drawing.Size(284, 50);
+            this.CreateExercsieButton.Size = new System.Drawing.Size(379, 62);
             this.CreateExercsieButton.TabIndex = 6;
             this.CreateExercsieButton.Text = "Создание упражнения";
             this.CreateExercsieButton.UseVisualStyleBackColor = true;
@@ -86,9 +90,10 @@
             // EditAccountButton
             // 
             this.EditAccountButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
-            this.EditAccountButton.Location = new System.Drawing.Point(72, 202);
+            this.EditAccountButton.Location = new System.Drawing.Point(96, 249);
+            this.EditAccountButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EditAccountButton.Name = "EditAccountButton";
-            this.EditAccountButton.Size = new System.Drawing.Size(284, 60);
+            this.EditAccountButton.Size = new System.Drawing.Size(379, 74);
             this.EditAccountButton.TabIndex = 7;
             this.EditAccountButton.Text = "Управление учетными записями";
             this.EditAccountButton.UseVisualStyleBackColor = true;
@@ -102,31 +107,31 @@
             this.оСоздателяхToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(398, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(531, 28);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.справкаToolStripMenuItem.Text = "Справка";
             this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
             // 
             // оСоздателяхToolStripMenuItem
             // 
             this.оСоздателяхToolStripMenuItem.Name = "оСоздателяхToolStripMenuItem";
-            this.оСоздателяхToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.оСоздателяхToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.оСоздателяхToolStripMenuItem.Text = "О создателях";
             this.оСоздателяхToolStripMenuItem.Click += new System.EventHandler(this.оСоздателяхToolStripMenuItem_Click);
             // 
             // AdminMenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(398, 330);
+            this.ClientSize = new System.Drawing.Size(531, 406);
             this.Controls.Add(this.EditAccountButton);
             this.Controls.Add(this.CreateExercsieButton);
             this.Controls.Add(this.exitButton);
@@ -135,6 +140,8 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "AdminMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Меню";

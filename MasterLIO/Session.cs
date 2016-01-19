@@ -11,5 +11,7 @@ namespace MasterLIO
         public static Exercise CurrentExercise { get; set; }
         public static ExerciseResultInfo CurrentResultInfo { get; set; }
         public static UserProfile user { get; set; }
+        public static int mode { get; set; }
+        public static List<KeyboardArea> areas { get; set; }
     }
 }

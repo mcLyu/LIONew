@@ -10,8 +10,12 @@ using System.Windows.Forms;
 
 namespace MasterLIO.Forms
 {
+    public enum EXERCISE_MODE { STANDART, BABY }
+
     public partial class ExercisePicker : Form
     {
+
+
         private void fillData(int level)
         {
             List<Exercise> list = DBUtils.LoadExercises(level);
@@ -36,6 +40,7 @@ namespace MasterLIO.Forms
         public ExercisePicker()
         {
             InitializeComponent();
+            radioButton1.Checked = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
@@ -71,7 +76,18 @@ namespace MasterLIO.Forms
             int level = comboBox1.SelectedIndex + 1;
             List<Exercise>  list = DBUtils.LoadExercises(level);
             Session.CurrentExercise = list[dataGridView1.SelectedRows[0].Index];
-            FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseForm());
+            if (radioButton1.Checked) 
+            {
+                Session.mode = 1;
+                FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseForm());
+
+            }
+            else if (radioButton2.Checked) 
+            {
+                Session.mode = 0;
+                FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseForm());
+                
+            }
         }
 
 

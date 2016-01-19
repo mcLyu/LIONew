@@ -50,11 +50,12 @@
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.ForeColor = System.Drawing.Color.Black;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 108;
-            this.listBox1.Location = new System.Drawing.Point(12, 37);
+            this.listBox1.ItemHeight = 135;
+            this.listBox1.Location = new System.Drawing.Point(16, 46);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.MultiColumn = true;
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(564, 112);
+            this.listBox1.Size = new System.Drawing.Size(751, 139);
             this.listBox1.TabIndex = 12;
             this.listBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listBox1_KeyPress);
             // 
@@ -69,7 +70,8 @@
             this.difficultyProgressBar});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(585, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(780, 26);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
@@ -77,32 +79,34 @@
             // lblCorrect
             // 
             this.lblCorrect.Name = "lblCorrect";
-            this.lblCorrect.Size = new System.Drawing.Size(77, 17);
+            this.lblCorrect.Size = new System.Drawing.Size(98, 21);
             this.lblCorrect.Text = "Правильно:?";
             // 
             // lblMissed
             // 
             this.lblMissed.Name = "lblMissed";
-            this.lblMissed.Size = new System.Drawing.Size(62, 17);
+            this.lblMissed.Size = new System.Drawing.Size(76, 21);
             this.lblMissed.Text = "Ошибок:?";
             // 
             // speed
             // 
             this.speed.Name = "speed";
-            this.speed.Size = new System.Drawing.Size(109, 17);
+            this.speed.Size = new System.Drawing.Size(135, 21);
             this.speed.Text = "Скорость: ?  сим/c";
             // 
             // difficultyProgressBar
             // 
             this.difficultyProgressBar.AutoToolTip = true;
             this.difficultyProgressBar.Name = "difficultyProgressBar";
-            this.difficultyProgressBar.Size = new System.Drawing.Size(330, 16);
+            this.difficultyProgressBar.Size = new System.Drawing.Size(440, 20);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(8, 191);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 238);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(568, 175);
+            this.pictureBox1.Size = new System.Drawing.Size(757, 215);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -120,14 +124,16 @@
             // 
             // ExerciseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(585, 379);
+            this.ClientSize = new System.Drawing.Size(780, 466);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "ExerciseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Выполнение упражнения";

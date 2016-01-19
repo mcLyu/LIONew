@@ -76,7 +76,7 @@
             this.passwordField.PasswordChar = '*';
             this.passwordField.Size = new System.Drawing.Size(251, 41);
             this.passwordField.TabIndex = 3;
-            this.passwordField.Text = "qwe";
+            this.passwordField.Text = "qwerty";
             // 
             // loginButton
             // 
@@ -103,6 +103,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";

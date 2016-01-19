@@ -55,3 +55,29 @@ C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\EntityFramewor
 C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\bin\Debug\System.Data.SQLite.xml
 C:\Users\Ф\Desktop\В рот ебал\LIONew\MasterLIO\obj\Debug\MasterLIO.csprojResolveAssemblyReference.cache
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\MasterLIO.exe.config
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.exe
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.pdb
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\MasterLIO.exe
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\MasterLIO.pdb
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\EntityFramework.dll
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\idgen.net.dll
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\System.Data.SQLite.dll
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\EntityFramework.xml
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\System.Data.SQLite.xml
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Forms.AdminMenuForm.resources
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Forms.CreateExercise.resources
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Forms.EditAccounForm.resources
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Forms.ExeciseResultForm.resources
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Forms.ExerciseForm.resources
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Forms.ExercisePicker.resources
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Forms.SelectAreaForm.resources
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Forms.StatisticForm.resources
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Forms.UserMenuForm.resources
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.LoginForm.resources
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Properties.Resources.resources
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.csproj.GenerateResource.Cache

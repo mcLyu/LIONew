@@ -19,22 +19,45 @@ namespace MasterLIO.Forms
             InitializeComponent();
         }
 
-        private void validateAll()
+        private bool checkParams()
         {
-            if ((textBox1.Text != "")
-                && (areasTextBox.Text!=""))
+            if (textBox1.Text == "")
             {
-                textBox1.BackColor = Color.GreenYellow;
-                areasTextBox.BackColor = Color.GreenYellow;
-                richTextBox1.ReadOnly = false;
-                richTextBox1.BackColor = Color.White;
-                richTextBox1.MaxLength = (int) numericUpDown1.Value;
+                MessageBox.Show("Введите название упражнения!");
+                return false;
             }
+            if (areasTextBox.Text == "")
+            {
+                MessageBox.Show("Выберите зоны клавиатуры");
+                return false;
+            }
+            return true;
+        }
+
+        private bool validateAll()
+        {
+            if (textBox1.Text == "")
+            {
+                //MessageBox.Show("Введите название упражнения!");
+                return false;
+            }
+            if (areasTextBox.Text=="")
+            {
+                //MessageBox.Show("Выберите зоны клавиатуры");
+                return false;
+            }
+
+            textBox1.BackColor = Color.GreenYellow;
+            areasTextBox.BackColor = Color.GreenYellow;
+            richTextBox1.ReadOnly = false;
+            richTextBox1.BackColor = Color.White;
+            richTextBox1.MaxLength = (int)numericUpDown1.Value;
+            return true;
         }
 
         private void selectAreaButton_Click(object sender, EventArgs e)
         {
-            areasList.Clear();
+            //areasList.Clear();
             areasTextBox.Text = "";
 
             Form f = new SelectAreaForm(ref areasList);
@@ -88,8 +111,13 @@ namespace MasterLIO.Forms
                 richTextBox1.Text = lines[1];
                 textBox4.Text = lines[2];
                 areasTextBox.Text = lines[3];
+                String s = Exercise.getAreasAsNums(lines[3].ToString());
+                List<KeyboardArea> areas = Exercise.getAreasList(s);
+
+                areasList.AddRange(areas);
                 numericUpDown3.Value = Convert.ToDecimal(lines[4]);
                 numericUpDown2.Value = Convert.ToDecimal(lines[5]);
+                numericUpDown1.Value = Convert.ToDecimal(lines[1].Length);
             }
             validateAll();
 
@@ -98,32 +126,40 @@ namespace MasterLIO.Forms
         //Подтвердить
         private void button4_Click(object sender, EventArgs e)
         {
-            String name = textBox1.Text;
-            String text = richTextBox1.Text;
-            int maxErrors = (int) numericUpDown2.Value;
-            int maxTime = (int) numericUpDown3.Value;
-            List<KeyboardArea> areas = Exercise.getAreasList(areasTextBox.Text);
-            int level = Convert.ToInt32(textBox4.Text);
-
             if (lastValidateCorrect())
             {
+                String name = textBox1.Text;
+                String text = richTextBox1.Text;
+                int maxErrors = (int)numericUpDown2.Value;
+                int maxTime = (int)numericUpDown3.Value;
+                List<KeyboardArea> areas = Exercise.getAreasList(areasTextBox.Text);
+                int level = Convert.ToInt32(textBox4.Text);
+
                 Exercise exercise = new Exercise(name, text, areas, maxErrors, maxTime, level);
                 DBUtils.SaveExercise(exercise);
                 MessageBox.Show("Упражнение создано успешно.", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 
             }
-            else MessageBox.Show("Проверьте настройки параметров!");
         }
 
         private bool lastValidateCorrect()
         {
-            if ((textBox1.Text != "")
-                && (areasTextBox.Text != "")
-                    && (areasUsedCorrected()))
+            if (textBox1.Text == "")
             {
-                return true;
+                MessageBox.Show("Введите название упражнения!");
+                return false;
             }
-            else return false;
+            if (areasTextBox.Text == "")
+            {
+                MessageBox.Show("Выберите зоны клавиатуры");
+                return false;
+            }
+            if (!areasUsedCorrected())
+            {
+                MessageBox.Show("В тексте упражнения есть символы, не принадлежащие выбранным зонам!");
+                return false;
+            }
+            return true;
         }
 
         private bool areasUsedCorrected()
@@ -148,6 +184,10 @@ namespace MasterLIO.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (!checkParams())
+            {
+                return;
+            }
             Random rnd = new Random();
             List<char> exerChars = new List<char>();
             foreach (KeyboardArea area in areasList)
