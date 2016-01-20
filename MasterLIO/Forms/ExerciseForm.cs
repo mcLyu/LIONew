@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 
+
 namespace MasterLIO.Forms
 {
     public partial class ExerciseForm : Form
@@ -79,15 +80,14 @@ namespace MasterLIO.Forms
             watch.Start();
             listBox1.Visible = true;
             exerciseType = 0;
-
+        }
+            
         public void initBabyMode()
         {
             exercise = Session.CurrentExercise;
             list = exercise.getTextsAsArrayChar();
             this.BackColor = Color.Pink;
             this.Refresh();
-
-        }
 
             stats = new Stats();
 
@@ -280,7 +280,7 @@ namespace MasterLIO.Forms
         private void ExerciseForm_KeyUp(object sender, KeyEventArgs e)
         {
             pictureBox1.Load("1.jpg");
-            }
+        }
 
         private void initPoints()
         {

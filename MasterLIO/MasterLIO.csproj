@@ -59,6 +59,9 @@
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="RsDesign.Controls">
+      <HintPath>..\..\..\..\Downloads\RsControls\RsControls\DockingDemo\bin\Debug\RsDesign.Controls.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -82,6 +85,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TouchscreenKeyboard">
+      <HintPath>..\..\..\TouchscreenKeyboard\TouchscreenKeyboard\bin\Debug\TouchscreenKeyboard.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaHelper.cs" />

@@ -48,9 +48,13 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.rsButton1 = new RsDesign.Controls.STD.RsButton();
+            this.rsButton2 = new RsDesign.Controls.STD.RsButton();
+            this.rsButton3 = new RsDesign.Controls.STD.RsButton();
+            this.rsButton4 = new RsDesign.Controls.STD.RsButton();
+            this.richTextBox1 = new RsDesign.Controls.STD.RsRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -59,63 +63,70 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(429, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 17);
+            this.label1.Size = new System.Drawing.Size(166, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Название упражнения";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(660, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 17);
+            this.label2.Size = new System.Drawing.Size(67, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Уровень";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(432, 70);
+            this.label3.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(432, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 17);
+            this.label3.Size = new System.Drawing.Size(147, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Длина упражнения";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(432, 130);
+            this.label4.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(428, 124);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 17);
+            this.label4.Size = new System.Drawing.Size(210, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "Число допустимых ошибок";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(432, 191);
+            this.label5.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(432, 183);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(234, 17);
+            this.label5.Size = new System.Drawing.Size(250, 24);
             this.label5.TabIndex = 4;
             this.label5.Text = "Максимальное время выполнения";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(432, 250);
+            this.label6.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(429, 245);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 17);
+            this.label6.Size = new System.Drawing.Size(140, 24);
             this.label6.TabIndex = 5;
             this.label6.Text = "Зоны клавиатуры";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(432, 304);
+            this.label7.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(428, 302);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(131, 17);
+            this.label7.Size = new System.Drawing.Size(151, 24);
             this.label7.TabIndex = 6;
             this.label7.Text = "Выбрать из файла";
             // 
@@ -132,16 +143,17 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(508, 100);
+            this.label8.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(508, 98);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 17);
+            this.label8.Size = new System.Drawing.Size(76, 24);
             this.label8.TabIndex = 8;
             this.label8.Text = "символов";
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.BackColor = System.Drawing.Color.GreenYellow;
-            this.numericUpDown1.Location = new System.Drawing.Point(432, 98);
+            this.numericUpDown1.Location = new System.Drawing.Point(432, 96);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             75,
@@ -166,7 +178,7 @@
             // numericUpDown2
             // 
             this.numericUpDown2.BackColor = System.Drawing.Color.GreenYellow;
-            this.numericUpDown2.Location = new System.Drawing.Point(432, 158);
+            this.numericUpDown2.Location = new System.Drawing.Point(432, 150);
             this.numericUpDown2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 22);
@@ -176,7 +188,7 @@
             // numericUpDown3
             // 
             this.numericUpDown3.BackColor = System.Drawing.Color.GreenYellow;
-            this.numericUpDown3.Location = new System.Drawing.Point(432, 219);
+            this.numericUpDown3.Location = new System.Drawing.Point(432, 211);
             this.numericUpDown3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             1000,
@@ -190,16 +202,17 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(564, 222);
+            this.label9.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(564, 214);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 17);
+            this.label9.Size = new System.Drawing.Size(55, 24);
             this.label9.TabIndex = 12;
             this.label9.Text = "секунд";
             // 
             // areasTextBox
             // 
             this.areasTextBox.BackColor = System.Drawing.Color.LightCoral;
-            this.areasTextBox.Location = new System.Drawing.Point(432, 274);
+            this.areasTextBox.Location = new System.Drawing.Point(429, 269);
             this.areasTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.areasTextBox.Name = "areasTextBox";
             this.areasTextBox.ReadOnly = true;
@@ -208,7 +221,7 @@
             // 
             // selectAreaButton
             // 
-            this.selectAreaButton.Location = new System.Drawing.Point(605, 274);
+            this.selectAreaButton.Location = new System.Drawing.Point(602, 269);
             this.selectAreaButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.selectAreaButton.Name = "selectAreaButton";
             this.selectAreaButton.Size = new System.Drawing.Size(89, 23);
@@ -219,7 +232,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(432, 324);
+            this.textBox3.Location = new System.Drawing.Point(433, 328);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -228,7 +241,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(605, 322);
+            this.button2.Location = new System.Drawing.Point(601, 326);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(89, 23);
@@ -239,10 +252,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(432, 369);
+            this.button3.Location = new System.Drawing.Point(404, 369);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 34);
+            this.button3.Size = new System.Drawing.Size(148, 34);
             this.button3.TabIndex = 15;
             this.button3.Text = "Сгенерировать";
             this.button3.UseVisualStyleBackColor = true;
@@ -269,22 +282,13 @@
             this.textBox4.Size = new System.Drawing.Size(76, 22);
             this.textBox4.TabIndex = 17;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(13, 34);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(403, 312);
-            this.richTextBox1.TabIndex = 18;
-            this.richTextBox1.Text = "";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
             this.label10.Location = new System.Drawing.Point(13, 11);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 17);
+            this.label10.Size = new System.Drawing.Size(146, 24);
             this.label10.TabIndex = 19;
             this.label10.Text = "Текст упражнения";
             // 
@@ -292,14 +296,77 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // rsButton1
+            // 
+            this.rsButton1.BorderColor = System.Drawing.Color.DimGray;
+            this.rsButton1.Location = new System.Drawing.Point(602, 269);
+            this.rsButton1.Name = "rsButton1";
+            this.rsButton1.Size = new System.Drawing.Size(89, 24);
+            this.rsButton1.SplitToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton1.TabIndex = 21;
+            this.rsButton1.Text = "Выбрать";
+            this.rsButton1.ToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton1.Click += new System.EventHandler(this.rsButton1_Click);
+            // 
+            // rsButton2
+            // 
+            this.rsButton2.BorderColor = System.Drawing.Color.DimGray;
+            this.rsButton2.Location = new System.Drawing.Point(602, 326);
+            this.rsButton2.Name = "rsButton2";
+            this.rsButton2.Size = new System.Drawing.Size(89, 24);
+            this.rsButton2.SplitToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton2.TabIndex = 22;
+            this.rsButton2.Text = "Выбрать";
+            this.rsButton2.ToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton2.Click += new System.EventHandler(this.rsButton2_Click);
+            // 
+            // rsButton3
+            // 
+            this.rsButton3.BorderColor = System.Drawing.Color.DimGray;
+            this.rsButton3.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold);
+            this.rsButton3.Location = new System.Drawing.Point(363, 369);
+            this.rsButton3.Name = "rsButton3";
+            this.rsButton3.Size = new System.Drawing.Size(189, 46);
+            this.rsButton3.SplitToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton3.TabIndex = 23;
+            this.rsButton3.Text = "Сгенерировать";
+            this.rsButton3.ToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton3.Click += new System.EventHandler(this.rsButton3_Click);
+            // 
+            // rsButton4
+            // 
+            this.rsButton4.BorderColor = System.Drawing.Color.DimGray;
+            this.rsButton4.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold);
+            this.rsButton4.Location = new System.Drawing.Point(568, 369);
+            this.rsButton4.Name = "rsButton4";
+            this.rsButton4.Size = new System.Drawing.Size(165, 46);
+            this.rsButton4.SplitToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton4.TabIndex = 24;
+            this.rsButton4.Text = "Подтвердить";
+            this.rsButton4.ToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton4.Click += new System.EventHandler(this.rsButton4_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(12, 38);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(403, 312);
+            this.richTextBox1.TabIndex = 25;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.ToolTip.Size = new System.Drawing.Size(6, 7);
+            // 
             // CreateExercise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(745, 427);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rsButton4);
+            this.Controls.Add(this.rsButton3);
+            this.Controls.Add(this.rsButton2);
+            this.Controls.Add(this.rsButton1);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -321,7 +388,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "CreateExercise";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -356,8 +423,12 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private RsDesign.Controls.STD.RsButton rsButton1;
+        private RsDesign.Controls.STD.RsButton rsButton2;
+        private RsDesign.Controls.STD.RsButton rsButton3;
+        private RsDesign.Controls.STD.RsButton rsButton4;
+        private RsDesign.Controls.STD.RsRichTextBox richTextBox1;
     }
 }

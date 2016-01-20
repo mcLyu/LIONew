@@ -19,17 +19,17 @@ namespace MasterLIO.Forms
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
 
         private void ExerciseButton_Click(object sender, EventArgs e)
         {
-            FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExercisePickerForm());  
+            
         }
 
         private void statistic_Click(object sender, EventArgs e)
         {
-            FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetStatisticForm());  
+            
         }
 
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,6 +42,21 @@ namespace MasterLIO.Forms
         {
             MessageBox.Show("Разработчиками программы 'Клавиатурный тренажер' являются студенты группы 6413 университета СНИУ: \n-Любайкин И.В.\n-Иванов А.Г.\n-Отрешко А.А.\n", "О создателях");
         
+        }
+
+        private void rsButton1_Click(object sender, EventArgs e)
+        {
+            FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExercisePickerForm());  
+        }
+
+        private void rsButton2_Click(object sender, EventArgs e)
+        {
+            FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetStatisticForm());  
+        }
+
+        private void rsButton3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

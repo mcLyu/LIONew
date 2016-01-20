@@ -82,3 +82,9 @@ C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.LoginForm.resou
 C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Properties.Resources.resources
 C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.csproj.GenerateResource.Cache
 C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.csprojResolveAssemblyReference.cache
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\obj\Debug\MasterLIO.Forms.BabyExercise.resources
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\RsDesign.Controls.dll
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\TouchscreenKeyboard.dll
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\RsDesign.Controls.pdb
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\RsDesign.Controls.xml
+C:\Users\Mill\Desktop\Artem\LIONew\MasterLIO\bin\Debug\TouchscreenKeyboard.pdb

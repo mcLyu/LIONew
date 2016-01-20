@@ -36,14 +36,19 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оСоздателяхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rsButton1 = new RsDesign.Controls.STD.RsButton();
+            this.rsButton2 = new RsDesign.Controls.STD.RsButton();
+            this.rsButton3 = new RsDesign.Controls.STD.RsButton();
+            this.rsButton4 = new RsDesign.Controls.STD.RsButton();
+            this.rsButton5 = new RsDesign.Controls.STD.RsButton();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
-            this.exitButton.Location = new System.Drawing.Point(96, 330);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exitButton.Location = new System.Drawing.Point(96, 331);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(379, 62);
             this.exitButton.TabIndex = 5;
@@ -55,7 +60,7 @@
             // 
             this.statistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.statistic.Location = new System.Drawing.Point(96, 110);
-            this.statistic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.statistic.Margin = new System.Windows.Forms.Padding(4);
             this.statistic.Name = "statistic";
             this.statistic.Size = new System.Drawing.Size(379, 62);
             this.statistic.TabIndex = 4;
@@ -67,7 +72,7 @@
             // 
             this.ExerciseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.ExerciseButton.Location = new System.Drawing.Point(96, 41);
-            this.ExerciseButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExerciseButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExerciseButton.Name = "ExerciseButton";
             this.ExerciseButton.Size = new System.Drawing.Size(379, 62);
             this.ExerciseButton.TabIndex = 3;
@@ -79,7 +84,7 @@
             // 
             this.CreateExercsieButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
             this.CreateExercsieButton.Location = new System.Drawing.Point(96, 178);
-            this.CreateExercsieButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateExercsieButton.Margin = new System.Windows.Forms.Padding(4);
             this.CreateExercsieButton.Name = "CreateExercsieButton";
             this.CreateExercsieButton.Size = new System.Drawing.Size(379, 62);
             this.CreateExercsieButton.TabIndex = 6;
@@ -91,7 +96,7 @@
             // 
             this.EditAccountButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
             this.EditAccountButton.Location = new System.Drawing.Point(96, 249);
-            this.EditAccountButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditAccountButton.Margin = new System.Windows.Forms.Padding(4);
             this.EditAccountButton.Name = "EditAccountButton";
             this.EditAccountButton.Size = new System.Drawing.Size(379, 74);
             this.EditAccountButton.TabIndex = 7;
@@ -126,12 +131,82 @@
             this.оСоздателяхToolStripMenuItem.Text = "О создателях";
             this.оСоздателяхToolStripMenuItem.Click += new System.EventHandler(this.оСоздателяхToolStripMenuItem_Click);
             // 
+            // rsButton1
+            // 
+            this.rsButton1.BorderColor = System.Drawing.Color.DimGray;
+            this.rsButton1.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rsButton1.Location = new System.Drawing.Point(96, 331);
+            this.rsButton1.Name = "rsButton1";
+            this.rsButton1.Size = new System.Drawing.Size(379, 62);
+            this.rsButton1.SplitToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton1.TabIndex = 9;
+            this.rsButton1.Text = "Выход";
+            this.rsButton1.ToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton1.Click += new System.EventHandler(this.rsButton1_Click);
+            // 
+            // rsButton2
+            // 
+            this.rsButton2.BorderColor = System.Drawing.Color.DimGray;
+            this.rsButton2.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold);
+            this.rsButton2.Location = new System.Drawing.Point(96, 249);
+            this.rsButton2.Name = "rsButton2";
+            this.rsButton2.Size = new System.Drawing.Size(379, 74);
+            this.rsButton2.SplitToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton2.TabIndex = 10;
+            this.rsButton2.Text = "Учетные записи";
+            this.rsButton2.ToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton2.Click += new System.EventHandler(this.rsButton2_Click);
+            // 
+            // rsButton3
+            // 
+            this.rsButton3.BorderColor = System.Drawing.Color.DimGray;
+            this.rsButton3.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold);
+            this.rsButton3.Location = new System.Drawing.Point(96, 178);
+            this.rsButton3.Name = "rsButton3";
+            this.rsButton3.Size = new System.Drawing.Size(379, 62);
+            this.rsButton3.SplitToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton3.TabIndex = 11;
+            this.rsButton3.Text = "Создать упражнение";
+            this.rsButton3.ToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton3.Click += new System.EventHandler(this.rsButton3_Click);
+            // 
+            // rsButton4
+            // 
+            this.rsButton4.BorderColor = System.Drawing.Color.DimGray;
+            this.rsButton4.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold);
+            this.rsButton4.Location = new System.Drawing.Point(96, 111);
+            this.rsButton4.Name = "rsButton4";
+            this.rsButton4.Size = new System.Drawing.Size(379, 61);
+            this.rsButton4.SplitToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton4.TabIndex = 12;
+            this.rsButton4.Text = "Статистика";
+            this.rsButton4.ToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton4.Click += new System.EventHandler(this.rsButton4_Click);
+            // 
+            // rsButton5
+            // 
+            this.rsButton5.BorderColor = System.Drawing.Color.DimGray;
+            this.rsButton5.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold);
+            this.rsButton5.Location = new System.Drawing.Point(96, 41);
+            this.rsButton5.Name = "rsButton5";
+            this.rsButton5.Size = new System.Drawing.Size(379, 64);
+            this.rsButton5.SplitToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton5.TabIndex = 13;
+            this.rsButton5.Text = "Упражнения";
+            this.rsButton5.ToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton5.Click += new System.EventHandler(this.rsButton5_Click);
+            // 
             // AdminMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(531, 406);
+            this.ClientSize = new System.Drawing.Size(531, 412);
+            this.Controls.Add(this.rsButton5);
+            this.Controls.Add(this.rsButton4);
+            this.Controls.Add(this.rsButton3);
+            this.Controls.Add(this.rsButton2);
+            this.Controls.Add(this.rsButton1);
             this.Controls.Add(this.EditAccountButton);
             this.Controls.Add(this.CreateExercsieButton);
             this.Controls.Add(this.exitButton);
@@ -140,7 +215,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AdminMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -162,5 +237,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оСоздателяхToolStripMenuItem;
+        private RsDesign.Controls.STD.RsButton rsButton1;
+        private RsDesign.Controls.STD.RsButton rsButton2;
+        private RsDesign.Controls.STD.RsButton rsButton3;
+        private RsDesign.Controls.STD.RsButton rsButton4;
+        private RsDesign.Controls.STD.RsButton rsButton5;
     }
 }

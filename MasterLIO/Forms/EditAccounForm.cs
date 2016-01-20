@@ -50,7 +50,46 @@ namespace MasterLIO.Forms
 
         private void createUserButton1_Click(object sender, EventArgs e)
         {
-            if ((logintextBox2.Text=="") || passwordtextBox2.Text == "" || rolecomboBox1.Text=="")
+            
+        }
+
+        private void deleteUserbutton2_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void approveButton3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Equals("Поиск..")) return;
+            userlistBox1.Items.Clear();
+            foreach(UserProfile user in users)
+            {
+                if (user.login.Contains(textBox1.Text))
+                {
+                    userlistBox1.Items.Add(user);
+                }
+            }
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            textBox1.Text = "Поиск..";
+        }
+
+        private void rsButton1_Click(object sender, EventArgs e)
+        {
+            if ((logintextBox2.Text == "") || passwordtextBox2.Text == "" || rolecomboBox1.Text == "")
             {
                 MessageBox.Show("Не все поля заполнены!");
                 return;
@@ -59,7 +98,7 @@ namespace MasterLIO.Forms
             string password = passwordtextBox2.Text;
             string roleString = rolecomboBox1.Text;
 
-           for(int i = 0;i<users.Count;i++)
+            for (int i = 0; i < users.Count; i++)
             {
                 if (users[i].login.Equals(login))
                 {
@@ -85,33 +124,36 @@ namespace MasterLIO.Forms
             userlistBox1.Items.AddRange(users.ToArray());
         }
 
-        private void deleteUserbutton2_Click(object sender, EventArgs e)
-        {        
-
-            UserProfile currentUser  = (UserProfile)userlistBox1.SelectedItem;
+        private void rsButton2_Click(object sender, EventArgs e)
+        {
+            UserProfile currentUser = (UserProfile)userlistBox1.SelectedItem;
             if (currentUser == null)
             {
                 MessageBox.Show("Выберите пользователя!");
                 return;
             }
-            if(currentUser.login.Equals(Session.user.login)){
-                 MessageBox.Show("Пользователь не может удалить самого себя.", "Запрещенное удаление", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }else{
-            
+            if (currentUser.login.Equals(Session.user.login))
+            {
+                MessageBox.Show("Пользователь не может удалить самого себя.", "Запрещенное удаление", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+
                 DialogResult dialogResult = MessageBox.Show("Вы уверены,что хотите удалить этого пользователя? ", "Подтверждение", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-            DBUtils.RemoveUser(currentUser);
-            userlistBox1.Items.Clear();
+                    DBUtils.RemoveUser(currentUser);
+                    userlistBox1.Items.Clear();
                     userlistBox1.Text = "";
                     users = DBUtils.LoadAllUsers();
-            userlistBox1.Items.AddRange(users.ToArray());
+                    userlistBox1.Items.AddRange(users.ToArray());
+                }
+
+                deleteUserbutton2.Enabled = false;
             }
-            
-            deleteUserbutton2.Enabled = false;
         }
 
-        private void approveButton3_Click(object sender, EventArgs e)
+        private void rsButton3_Click(object sender, EventArgs e)
         {
             if ((logintextBox2.Text == "") || passwordtextBox2.Text == "" || rolecomboBox1.Text == "")
             {
@@ -119,7 +161,7 @@ namespace MasterLIO.Forms
                 return;
             }
             UserProfile selectedUser = (UserProfile)userlistBox1.SelectedItem;
-            if (selectedUser == null) 
+            if (selectedUser == null)
             {
                 MessageBox.Show("Выберите пользователя!");
                 return;
@@ -145,29 +187,6 @@ namespace MasterLIO.Forms
             userlistBox1.Items.Clear();
             users = DBUtils.LoadAllUsers();
             userlistBox1.Items.AddRange(users.ToArray());
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox1.Text.Equals("Поиск..")) return;
-            userlistBox1.Items.Clear();
-            foreach(UserProfile user in users)
-            {
-                if (user.login.Contains(textBox1.Text))
-                {
-                    userlistBox1.Items.Add(user);
-                }
-            }
-        }
-
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            }
-
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            textBox1.Text = "Поиск..";
         }
 
 

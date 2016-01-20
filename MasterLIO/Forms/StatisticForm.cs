@@ -80,59 +80,7 @@ namespace MasterLIO.Forms
 
         private void statisticSearchButton1_Click(object sender, EventArgs e)
         {
-            resultsInfo = statistic.getResultsByDate(dateTimePicker1.Value);
-            List<int> checkNums = new List<int>();
-            showResults.Clear();
-            if (resultsInfo != null)
-            {
-                exerciseNumbercomboBox1.Items.Clear();
-                exerciseNumbercomboBox1.Text = "";
-                int i = 0;
-                foreach (ExerciseResultInfo result in resultsInfo)
-                {
-                    i++;
-                    String currentListName = "";
-                    String level = result.level.ToString();
-                    String exerciseNum = result.exerciseId.ToString().Substring(1);// MAGIC!
-                    int id = Convert.ToInt32(level + exerciseNum);
-
-                    if (checkNums.Contains(id))
-                    {
-                        int j = 0;
-                        foreach (ExerciseResultInfo eqResult in showResults.Values)
-                        {
-                            if (eqResult.exerciseId == id)
-                            {
-                                j++;
-                            }
-                        }
-                        currentListName = "№" + exerciseNum + ", ур-нь " + level + " Попытка " + j;
-                    }
-                    else currentListName = "№" + exerciseNum + ", ур-нь " + level;
-                    exerciseNumbercomboBox1.Items.Add(currentListName);
-
-                    showResults.Add(currentListName, result);
-                    checkNums.Add(id);
-
-
-                    // exerciseNumbercomboBox1.Items[0].
-                }
-            }
-            else
-            {
-                exerciseNumbercomboBox1.Items.Clear();
-                exerciseNumbercomboBox1.Text = "";
-                MessageBox.Show("Результатов по данному дню не найдено.");
-
-            }
-
-            allUserStatistic = statistic.getResultsInfo();
-
-            updateChart(allUserStatistic);
-            if (exerciseNumbercomboBox1.Items.Count > 0)
-            {
-                exerciseNumbercomboBox1.SelectedItem = exerciseNumbercomboBox1.Items[0];
-            }
+            
         }
 
         private void exerciseNumbercomboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -210,6 +158,63 @@ namespace MasterLIO.Forms
             allUserStatistic = statistic.getResultsInfo();
 
             updateChart(allUserStatistic);
+        }
+
+        private void rsButton1_Click(object sender, EventArgs e)
+        {
+            resultsInfo = statistic.getResultsByDate(dateTimePicker1.Value);
+            List<int> checkNums = new List<int>();
+            showResults.Clear();
+            if (resultsInfo != null)
+            {
+                exerciseNumbercomboBox1.Items.Clear();
+                exerciseNumbercomboBox1.Text = "";
+                int i = 0;
+                foreach (ExerciseResultInfo result in resultsInfo)
+                {
+                    i++;
+                    String currentListName = "";
+                    String level = result.level.ToString();
+                    String exerciseNum = result.exerciseId.ToString().Substring(1);// MAGIC!
+                    int id = Convert.ToInt32(level + exerciseNum);
+
+                    if (checkNums.Contains(id))
+                    {
+                        int j = 0;
+                        foreach (ExerciseResultInfo eqResult in showResults.Values)
+                        {
+                            if (eqResult.exerciseId == id)
+                            {
+                                j++;
+                            }
+                        }
+                        currentListName = "№" + exerciseNum + ", ур-нь " + level + " Попытка " + j;
+                    }
+                    else currentListName = "№" + exerciseNum + ", ур-нь " + level;
+                    exerciseNumbercomboBox1.Items.Add(currentListName);
+
+                    showResults.Add(currentListName, result);
+                    checkNums.Add(id);
+
+
+                    // exerciseNumbercomboBox1.Items[0].
+                }
+            }
+            else
+            {
+                exerciseNumbercomboBox1.Items.Clear();
+                exerciseNumbercomboBox1.Text = "";
+                MessageBox.Show("Результатов по данному дню не найдено.");
+
+            }
+
+            allUserStatistic = statistic.getResultsInfo();
+
+            updateChart(allUserStatistic);
+            if (exerciseNumbercomboBox1.Items.Count > 0)
+            {
+                exerciseNumbercomboBox1.SelectedItem = exerciseNumbercomboBox1.Items[0];
+            }
         }
 
     }

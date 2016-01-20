@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -48,61 +45,67 @@
             this.exerciseNumbercomboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.rsButton1 = new RsDesign.Controls.STD.RsButton();
             ((System.ComponentModel.ISupportInitialize)(this.statisticChart1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 63);
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(3, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 17);
+            this.label1.Size = new System.Drawing.Size(152, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Номер упражнения:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 101);
+            this.label2.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(3, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 17);
+            this.label2.Size = new System.Drawing.Size(155, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Дата прохождения:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 139);
+            this.label3.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(12, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 17);
+            this.label3.Size = new System.Drawing.Size(126, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Кол-во ошибок:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 191);
+            this.label4.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(15, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 17);
+            this.label4.Size = new System.Drawing.Size(86, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "Скорость:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 231);
+            this.label5.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(15, 200);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 17);
+            this.label5.Size = new System.Drawing.Size(66, 24);
             this.label5.TabIndex = 4;
             this.label5.Text = "Оценка:";
             // 
             // statisticSearchButton1
             // 
-            this.statisticSearchButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.8F);
-            this.statisticSearchButton1.Location = new System.Drawing.Point(397, 273);
+            this.statisticSearchButton1.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold);
+            this.statisticSearchButton1.Location = new System.Drawing.Point(395, 265);
             this.statisticSearchButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.statisticSearchButton1.Name = "statisticSearchButton1";
-            this.statisticSearchButton1.Size = new System.Drawing.Size(196, 53);
+            this.statisticSearchButton1.Size = new System.Drawing.Size(196, 61);
             this.statisticSearchButton1.TabIndex = 5;
             this.statisticSearchButton1.Text = "Найти";
             this.statisticSearchButton1.UseVisualStyleBackColor = true;
@@ -110,12 +113,6 @@
             // 
             // statisticChart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.statisticChart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.statisticChart1.Legends.Add(legend2);
-            this.statisticChart1.Location = new System.Drawing.Point(272, 9);
-            this.statisticChart1.Margin = new System.Windows.Forms.Padding(2);
             chartArea3.Name = "ChartArea1";
             this.statisticChart1.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
@@ -133,10 +130,11 @@
             series3.LabelBorderColor = System.Drawing.Color.Red;
             series3.Legend = "Legend1";
             series3.MarkerColor = System.Drawing.Color.Red;
-            series3.MarkerSize = 10;
+            series3.MarkerSize = 15;
             series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
             series3.Name = "Time";
-            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.statisticChart1.Series.Add(series3);
             this.statisticChart1.Size = new System.Drawing.Size(423, 241);
             this.statisticChart1.TabIndex = 6;
@@ -145,7 +143,7 @@
             // 
             // errorCounttextBox3
             // 
-            this.errorCounttextBox3.Location = new System.Drawing.Point(157, 139);
+            this.errorCounttextBox3.Location = new System.Drawing.Point(156, 129);
             this.errorCounttextBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.errorCounttextBox3.Name = "errorCounttextBox3";
             this.errorCounttextBox3.ReadOnly = true;
@@ -154,7 +152,7 @@
             // 
             // exerciseSpeedtextBox4
             // 
-            this.exerciseSpeedtextBox4.Location = new System.Drawing.Point(157, 182);
+            this.exerciseSpeedtextBox4.Location = new System.Drawing.Point(156, 164);
             this.exerciseSpeedtextBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.exerciseSpeedtextBox4.Name = "exerciseSpeedtextBox4";
             this.exerciseSpeedtextBox4.ReadOnly = true;
@@ -163,7 +161,7 @@
             // 
             // assessmentTextBox5
             // 
-            this.assessmentTextBox5.Location = new System.Drawing.Point(157, 228);
+            this.assessmentTextBox5.Location = new System.Drawing.Point(156, 202);
             this.assessmentTextBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.assessmentTextBox5.Name = "assessmentTextBox5";
             this.assessmentTextBox5.ReadOnly = true;
@@ -180,7 +178,6 @@
             // 
             // exerciseNumbercomboBox1
             // 
-            this.exerciseNumbercomboBox1.FormattingEnabled = true;
             this.exerciseNumbercomboBox1.Location = new System.Drawing.Point(157, 59);
             this.exerciseNumbercomboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.exerciseNumbercomboBox1.Name = "exerciseNumbercomboBox1";
@@ -191,11 +188,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 32);
+            this.label7.Font = new System.Drawing.Font("Segoe Print", 8F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(4, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 17);
+            this.label7.Size = new System.Drawing.Size(116, 24);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Пользователь";
+            this.label7.Text = "Пользователь:";
             this.label7.Visible = false;
             // 
             // comboBox1
@@ -209,12 +207,26 @@
             this.comboBox1.Visible = false;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // rsButton1
+            // 
+            this.rsButton1.BorderColor = System.Drawing.Color.DimGray;
+            this.rsButton1.Font = new System.Drawing.Font("Segoe Print", 18F, System.Drawing.FontStyle.Bold);
+            this.rsButton1.Location = new System.Drawing.Point(395, 265);
+            this.rsButton1.Name = "rsButton1";
+            this.rsButton1.Size = new System.Drawing.Size(196, 60);
+            this.rsButton1.SplitToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton1.TabIndex = 15;
+            this.rsButton1.Text = "Найти";
+            this.rsButton1.ToolTip.Size = new System.Drawing.Size(6, 7);
+            this.rsButton1.Click += new System.EventHandler(this.rsButton1_Click);
+            // 
             // StatisticForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(804, 337);
+            this.Controls.Add(this.rsButton1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.exerciseNumbercomboBox1);
             this.Controls.Add(this.dateTimePicker1);
@@ -257,5 +269,6 @@
         private System.Windows.Forms.ComboBox exerciseNumbercomboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
+        private RsDesign.Controls.STD.RsButton rsButton1;
     }
 }

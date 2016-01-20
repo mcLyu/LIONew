@@ -22,6 +22,11 @@ namespace MasterLIO
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void rsButton1_Click(object sender, EventArgs e)
+        {
             //MONKEY CODE!!!   ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
             if (loginField.Text == "" || passwordField.Text == "")

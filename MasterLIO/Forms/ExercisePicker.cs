@@ -77,24 +77,7 @@ namespace MasterLIO.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
-            {
-                int level = comboBox1.SelectedIndex + 1;
-                List<Exercise> list = DBUtils.LoadExercises(level);
-                Session.CurrentExercise = list[dataGridView1.SelectedRows[0].Index];
-                if (radioButton1.Checked)
-                {
-                    Session.mode = 1;
-                    FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseForm());
-
-                }
-                else if (radioButton2.Checked)
-                {
-                    Session.mode = 0;
-                    FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseBabyForm());
-
-                }
-            }
+            
         }
 
 
@@ -143,6 +126,28 @@ namespace MasterLIO.Forms
                 {
                     currentIndex++;
                     dataGridView1.Rows[currentIndex].Selected = true;
+                }
+            }
+        }
+
+        private void rsButton1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                int level = comboBox1.SelectedIndex + 1;
+                List<Exercise> list = DBUtils.LoadExercises(level);
+                Session.CurrentExercise = list[dataGridView1.SelectedRows[0].Index];
+                if (radioButton1.Checked)
+                {
+                    Session.mode = 1;
+                    FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseForm());
+
+                }
+                else if (radioButton2.Checked)
+                {
+                    Session.mode = 0;
+                    FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExerciseBabyForm());
+
                 }
             }
         }

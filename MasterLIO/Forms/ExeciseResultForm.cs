@@ -17,9 +17,9 @@ namespace MasterLIO.Forms
         {
             InitializeComponent();
             ExerciseResultInfo exerciseInfo = Session.CurrentResultInfo;
-            wrongNumber.Text = "Количество ошибок: " + exerciseInfo.errorsCount.ToString();
+            wrongNumber.Text = "Ошибок: " + exerciseInfo.errorsCount.ToString();
             markLabel.Text = exerciseInfo.assesment.ToString();
-            time.Text = "Время выполнения: " + exerciseInfo.spendetTime + " сек.";
+            time.Text = "Время: " + exerciseInfo.spendetTime + " сек.";
             speed.Text = "Скорость: " + exerciseInfo.speed + " сим/с";
         }
 
@@ -43,6 +43,16 @@ namespace MasterLIO.Forms
         private void ExeciseResultForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(command == 0) command = 2;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            
         }
 
 
