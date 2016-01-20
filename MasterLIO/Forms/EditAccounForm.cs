@@ -31,10 +31,10 @@ namespace MasterLIO.Forms
             deleteUserbutton2.Enabled = true;
             if (userlistBox1.SelectedIndex != -1)
             {
-                UserProfile selectedUser = (UserProfile)userlistBox1.SelectedItem;
-                logintextBox2.Text = selectedUser.login;
-                passwordtextBox2.Text = selectedUser.password;
-                rolecomboBox1.Text = selectedUser.role.ToString();
+            UserProfile selectedUser = (UserProfile)userlistBox1.SelectedItem;
+            logintextBox2.Text = selectedUser.login;
+            passwordtextBox2.Text = selectedUser.password;
+            rolecomboBox1.Text = selectedUser.role.ToString();
             }
 
         }
@@ -58,6 +58,15 @@ namespace MasterLIO.Forms
             string login = logintextBox2.Text;
             string password = passwordtextBox2.Text;
             string roleString = rolecomboBox1.Text;
+
+           for(int i = 0;i<users.Count;i++)
+            {
+                if (users[i].login.Equals(login))
+                {
+                    MessageBox.Show("Данное имя уже занято");
+                    return;
+                }
+            }
             Role role = Role.STUDENT;
 
             if (roleString.Equals("STUDENT"))
@@ -77,7 +86,7 @@ namespace MasterLIO.Forms
         }
 
         private void deleteUserbutton2_Click(object sender, EventArgs e)
-        {
+        {        
 
             UserProfile currentUser  = (UserProfile)userlistBox1.SelectedItem;
             if (currentUser == null)
@@ -89,13 +98,16 @@ namespace MasterLIO.Forms
                  MessageBox.Show("Пользователь не может удалить самого себя.", "Запрещенное удаление", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }else{
             
-                DBUtils.RemoveUser(currentUser);
-                userlistBox1.Items.Clear();
-                userlistBox1.Text = "";
-                users = DBUtils.LoadAllUsers();
-                userlistBox1.Items.AddRange(users.ToArray());
+                DialogResult dialogResult = MessageBox.Show("Вы уверены,что хотите удалить этого пользователя? ", "Подтверждение", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+            DBUtils.RemoveUser(currentUser);
+            userlistBox1.Items.Clear();
+                    userlistBox1.Text = "";
+                    users = DBUtils.LoadAllUsers();
+            userlistBox1.Items.AddRange(users.ToArray());
             }
-
+            
             deleteUserbutton2.Enabled = false;
         }
 
@@ -141,7 +153,7 @@ namespace MasterLIO.Forms
             userlistBox1.Items.Clear();
             foreach(UserProfile user in users)
             {
-                if (user.login.Contains(textBox1.Text)) 
+                if (user.login.Contains(textBox1.Text))
                 {
                     userlistBox1.Items.Add(user);
                 }
@@ -151,7 +163,7 @@ namespace MasterLIO.Forms
         private void textBox1_Enter(object sender, EventArgs e)
         {
             textBox1.Text = "";
-        }
+            }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {

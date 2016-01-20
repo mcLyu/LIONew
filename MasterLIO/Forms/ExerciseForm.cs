@@ -24,6 +24,11 @@ namespace MasterLIO.Forms
         Stopwatch watch;
         Stats stats;
         bool mistake = false;
+        bool isOpening = true;
+        int exerciseType;
+        List<TextBox> listOfBox = new List<TextBox>();
+    
+    
         private void clearAll()
         {
             list = exercise.getTextsAsArrayChar();
@@ -72,7 +77,8 @@ namespace MasterLIO.Forms
 
             watch = new Stopwatch();
             watch.Start();
-        }
+            listBox1.Visible = true;
+            exerciseType = 0;
 
         public void initBabyMode()
         {
@@ -80,6 +86,8 @@ namespace MasterLIO.Forms
             list = exercise.getTextsAsArrayChar();
             this.BackColor = Color.Pink;
             this.Refresh();
+
+        }
 
             stats = new Stats();
 
@@ -107,10 +115,10 @@ namespace MasterLIO.Forms
             else
             {
                 assigment = (int)Math.Round(5 * (1 - errorsCount / maxErrorsCount));
-
+                
             }
 
-            if (index < list.Count && listBox1.Items.Count < 4)
+            if (index < list.Count && listBox1.Items.Count < 4 )
             {
 
                 listBox1.Items.Add(list[index].ToString());
@@ -122,7 +130,7 @@ namespace MasterLIO.Forms
             double speedDouble = (double)stats.Total / watch.Elapsed.Seconds;
 
 
-            if (watch.Elapsed.Seconds > exercise.maxTime && exercise.maxTime != 0)
+            if (watch.Elapsed.Seconds > exercise.maxTime && exercise.maxTime!=0)
             {
                 listBox1.Items.Clear();
                 listBox1.Items.Add("Time is out.");
@@ -183,7 +191,7 @@ namespace MasterLIO.Forms
 
                 Statistic stat = new Statistic(Session.user.userId);
                 stat.addResult(result);
-
+                
 
                 Session.CurrentResultInfo = result;
 
@@ -221,34 +229,34 @@ namespace MasterLIO.Forms
                 g.DrawPolygon(pen, new Point[] { point, new Point(point.X + 30, point.Y), new Point(point.X + 30, point.Y + 30), new Point(point.X, point.Y + 30) });
                 else g.DrawPolygon(pen, new Point[] { point, new Point(point.X + 250, point.Y), new Point(point.X + 250, point.Y + 30), new Point(point.X, point.Y + 30) });
             }
-                if (isRuning && listBox1.Items.Count > 0)
-                {
+            if (isRuning && listBox1.Items.Count > 0)
+            {
 
                 
                     Char firstChar = Convert.ToChar(listBox1.Items[0]);
 
-                    if (firstChar.Equals(keyChar))
-                    {
-                        listBox1.Items.Remove(listBox1.Items[0]);
-                        listBox1.Refresh();
-                        stats.Update(true);
-                        difficultyProgressBar.Value = stats.Correct;
-                    }
-                    else
-                    {
-                        if (stats.Missed <= exercise.maxErrors)
-                        {
-                            stats.Update(false);
-                            mistake = true;
-                            timer2.Start();
-                        }
-                    }
-                    double speedDouble = (double)stats.Total / watch.Elapsed.Seconds;
-                    lblCorrect.Text = "Правильно: " + stats.Correct;
-                    lblMissed.Text = "Ошибок: " + stats.Missed;
-                    speed.Text = "Скорость: " + Math.Round(speedDouble, 1) + "сим/c";
-
+                if (firstChar.Equals(keyChar))
+                {
+                    listBox1.Items.Remove(listBox1.Items[0]);
+                    listBox1.Refresh();
+                    stats.Update(true);
+                    difficultyProgressBar.Value = stats.Correct;
                 }
+                else
+                {
+                    if (stats.Missed <= exercise.maxErrors)
+                    {
+                        stats.Update(false);
+                        mistake = true;
+                        timer2.Start();
+                    }
+                }
+                double speedDouble = (double)stats.Total / watch.Elapsed.Seconds;
+                lblCorrect.Text = "Правильно: " + stats.Correct;
+                lblMissed.Text = "Ошибок: " + stats.Missed + "/" + exercise.maxErrors;
+                speed.Text = "Скорость: " + Math.Round(speedDouble, 1) + "сим/c";
+
+            }
                 Thread.Sleep(100);
                 pictureBox1.Invalidate();
 
@@ -272,7 +280,7 @@ namespace MasterLIO.Forms
         private void ExerciseForm_KeyUp(object sender, KeyEventArgs e)
         {
             pictureBox1.Load("1.jpg");
-        }
+            }
 
         private void initPoints()
         {

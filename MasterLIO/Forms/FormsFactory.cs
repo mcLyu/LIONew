@@ -55,6 +55,10 @@ namespace MasterLIO.Forms
             return new CreateExercise();
         }
 
+        public static Form GetExerciseBabyForm()
+        {
+            return new BabyExercise();
+        }
         public static void SetUser(UserProfile usr)
         {
             userProfile = usr;

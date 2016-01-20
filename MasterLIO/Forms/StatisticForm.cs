@@ -26,10 +26,22 @@ namespace MasterLIO.Forms
             resultsInfo.Sort((x, y) =>
                     x.dateOfPassing.CompareTo(y.dateOfPassing));
 
+            Dictionary<DateTime, List<int>> biddlo = new Dictionary<DateTime, List<int>>();
             foreach (ExerciseResultInfo result in resultsInfo)
             {
-                statisticChart1.Series["Time"].Points.AddXY(result.dateOfPassing, result.assesment);
+                if (!biddlo.ContainsKey(result.dateOfPassing))
+                    biddlo.Add(result.dateOfPassing, new List<int>());
+
+                biddlo[result.dateOfPassing].Add(result.assesment);
             }
+
+            foreach (DateTime time in biddlo.Keys)
+            {
+                double sum = 0;
+                for (int i = 0; i < biddlo[time].Count; i++) sum += biddlo[time][i];
+                statisticChart1.Series["Time"].Points.AddXY(time, Math.Round(sum / biddlo[time].Count, 1));
+            }
+
 
             DateTime minDate = dateTimePicker1.Value.AddDays(-3);
             DateTime maxDate = dateTimePicker1.Value.AddDays(3);
@@ -98,20 +110,29 @@ namespace MasterLIO.Forms
                     }
                     else currentListName = "№" + exerciseNum + ", ур-нь " + level;
                     exerciseNumbercomboBox1.Items.Add(currentListName);
-                    
+
                     showResults.Add(currentListName, result);
                     checkNums.Add(id);
+
+
+                    // exerciseNumbercomboBox1.Items[0].
                 }
             }
             else
             {
                 exerciseNumbercomboBox1.Items.Clear();
                 exerciseNumbercomboBox1.Text = "";
+                MessageBox.Show("Результатов по данному дню не найдено.");
+
             }
 
             allUserStatistic = statistic.getResultsInfo();
 
             updateChart(allUserStatistic);
+            if (exerciseNumbercomboBox1.Items.Count > 0)
+            {
+                exerciseNumbercomboBox1.SelectedItem = exerciseNumbercomboBox1.Items[0];
+            }
         }
 
         private void exerciseNumbercomboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -165,19 +186,31 @@ namespace MasterLIO.Forms
             statistic = DBUtils.GetUserStatistic(currentUser.userId);
         }
 
+        private void StatisticForm_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < comboBox1.Items.Count; i++)
+            {
+                UserProfile usr = (UserProfile)comboBox1.Items[i];
+                if (Session.user.userId.Equals(usr.userId))
+                {
+                    comboBox1.SelectedItem = comboBox1.Items[i];
+                    break;
+                }
+            }
+        }
 
         private void statisticChart1_MouseClick(object sender, MouseEventArgs e)
         {
             var x = statisticChart1.ChartAreas[0].AxisX.PixelPositionToValue(e.X);
             var y = statisticChart1.ChartAreas[0].AxisY.PixelPositionToValue(e.Y);
             DateTime test = DateTime.FromOADate(x);
-            dateTimePicker1.Value = test;
+            test = test.AddHours(4);
+            dateTimePicker1.Value = test.Date;
 
             allUserStatistic = statistic.getResultsInfo();
 
             updateChart(allUserStatistic);
         }
 
-      
     }
 }

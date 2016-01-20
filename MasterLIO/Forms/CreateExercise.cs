@@ -200,9 +200,19 @@ namespace MasterLIO.Forms
             String exerciseText = "";
 
             for (int i = 0; i < numericUpDown1.Value; i++)
-                exerciseText += exerChars[rnd.Next(0, maxGen)];
+                exerciseText += exerChars[rnd.Next(0, maxGen)];//Создание упражнения падает
 
             richTextBox1.Text = exerciseText;
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+            numericUpDown2.Maximum = numericUpDown1.Value;
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            numericUpDown2.Maximum = numericUpDown1.Value;
         }
     }
 }
