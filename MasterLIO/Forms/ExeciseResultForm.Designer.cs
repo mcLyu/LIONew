@@ -44,11 +44,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Control;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(261, 63);
+            this.label2.Font = new System.Drawing.Font("Segoe Print", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.label2.Location = new System.Drawing.Point(251, 43);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 27);
+            this.label2.Size = new System.Drawing.Size(91, 35);
             this.label2.TabIndex = 12;
             this.label2.Text = "Оценка";
             // 
@@ -57,6 +57,7 @@
             this.groupBox1.Controls.Add(this.speed);
             this.groupBox1.Controls.Add(this.time);
             this.groupBox1.Controls.Add(this.wrongNumber);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(20, 63);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
@@ -72,7 +73,7 @@
             this.speed.Location = new System.Drawing.Point(8, 110);
             this.speed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.speed.Name = "speed";
-            this.speed.Size = new System.Drawing.Size(46, 17);
+            this.speed.Size = new System.Drawing.Size(57, 26);
             this.speed.TabIndex = 5;
             this.speed.Text = "label2";
             // 
@@ -82,7 +83,7 @@
             this.time.Location = new System.Drawing.Point(8, 73);
             this.time.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(46, 17);
+            this.time.Size = new System.Drawing.Size(57, 26);
             this.time.TabIndex = 4;
             this.time.Text = "label2";
             // 
@@ -92,7 +93,7 @@
             this.wrongNumber.Location = new System.Drawing.Point(8, 32);
             this.wrongNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.wrongNumber.Name = "wrongNumber";
-            this.wrongNumber.Size = new System.Drawing.Size(46, 17);
+            this.wrongNumber.Size = new System.Drawing.Size(57, 26);
             this.wrongNumber.TabIndex = 3;
             this.wrongNumber.Text = "label2";
             // 
@@ -110,21 +111,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.label1.Location = new System.Drawing.Point(8, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 27);
+            this.label1.Size = new System.Drawing.Size(187, 35);
             this.label1.TabIndex = 9;
             this.label1.Text = "Ваш результат";
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
-            this.button2.Location = new System.Drawing.Point(235, 263);
+            this.button2.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(229, 263);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 46);
+            this.button2.Size = new System.Drawing.Size(149, 46);
             this.button2.TabIndex = 8;
             this.button2.Text = "Завершить";
             this.button2.UseVisualStyleBackColor = true;
@@ -132,7 +133,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
+            this.button1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(13, 263);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";

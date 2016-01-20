@@ -33,14 +33,14 @@
             this.ExerciseButton = new System.Windows.Forms.Button();
             this.CreateExercsieButton = new System.Windows.Forms.Button();
             this.EditAccountButton = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оСоздателяхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rsButton1 = new RsDesign.Controls.STD.RsButton();
             this.rsButton2 = new RsDesign.Controls.STD.RsButton();
             this.rsButton3 = new RsDesign.Controls.STD.RsButton();
             this.rsButton4 = new RsDesign.Controls.STD.RsButton();
             this.rsButton5 = new RsDesign.Controls.STD.RsButton();
+            this.menuStrip1 = new RsDesign.Controls.Menu.RsMenuStrip();
+            this.справкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.оСоздателяхToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,33 +103,6 @@
             this.EditAccountButton.Text = "Управление учетными записями";
             this.EditAccountButton.UseVisualStyleBackColor = true;
             this.EditAccountButton.Click += new System.EventHandler(this.EditAccountButton_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справкаToolStripMenuItem,
-            this.оСоздателяхToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(531, 28);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.справкаToolStripMenuItem.Text = "Справка";
-            this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
-            // 
-            // оСоздателяхToolStripMenuItem
-            // 
-            this.оСоздателяхToolStripMenuItem.Name = "оСоздателяхToolStripMenuItem";
-            this.оСоздателяхToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
-            this.оСоздателяхToolStripMenuItem.Text = "О создателях";
-            this.оСоздателяхToolStripMenuItem.Click += new System.EventHandler(this.оСоздателяхToolStripMenuItem_Click);
             // 
             // rsButton1
             // 
@@ -196,6 +169,32 @@
             this.rsButton5.ToolTip.Size = new System.Drawing.Size(6, 7);
             this.rsButton5.Click += new System.EventHandler(this.rsButton5_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.справкаToolStripMenuItem1,
+            this.оСоздателяхToolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(531, 28);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "rsMenuStrip1";
+            // 
+            // справкаToolStripMenuItem1
+            // 
+            this.справкаToolStripMenuItem1.Name = "справкаToolStripMenuItem1";
+            this.справкаToolStripMenuItem1.Size = new System.Drawing.Size(79, 24);
+            this.справкаToolStripMenuItem1.Text = "Справка";
+            this.справкаToolStripMenuItem1.Click += new System.EventHandler(this.справкаToolStripMenuItem1_Click);
+            // 
+            // оСоздателяхToolStripMenuItem1
+            // 
+            this.оСоздателяхToolStripMenuItem1.Name = "оСоздателяхToolStripMenuItem1";
+            this.оСоздателяхToolStripMenuItem1.Size = new System.Drawing.Size(112, 24);
+            this.оСоздателяхToolStripMenuItem1.Text = "О создателях";
+            this.оСоздателяхToolStripMenuItem1.Click += new System.EventHandler(this.оСоздателяхToolStripMenuItem1_Click);
+            // 
             // AdminMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -214,7 +213,6 @@
             this.Controls.Add(this.ExerciseButton);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AdminMenuForm";
@@ -234,13 +232,13 @@
         private System.Windows.Forms.Button ExerciseButton;
         private System.Windows.Forms.Button CreateExercsieButton;
         private System.Windows.Forms.Button EditAccountButton;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem оСоздателяхToolStripMenuItem;
         private RsDesign.Controls.STD.RsButton rsButton1;
         private RsDesign.Controls.STD.RsButton rsButton2;
         private RsDesign.Controls.STD.RsButton rsButton3;
         private RsDesign.Controls.STD.RsButton rsButton4;
         private RsDesign.Controls.STD.RsButton rsButton5;
+        private RsDesign.Controls.Menu.RsMenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem оСоздателяхToolStripMenuItem1;
     }
 }

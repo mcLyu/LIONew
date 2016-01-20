@@ -42,7 +42,7 @@
             this.passwordtextBox2 = new RsDesign.Controls.STD.RsTextBox();
             this.rolecomboBox1 = new RsDesign.Controls.STD.RsComboBox();
             this.textBox1 = new RsDesign.Controls.STD.RsTextBox();
-            this.userlistBox1 = new RsDesign.Controls.STD.RsListBox();
+            this.userlistBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.rolecomboBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,23 +194,26 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
             this.textBox1.Location = new System.Drawing.Point(11, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 34);
+            this.textBox1.Size = new System.Drawing.Size(152, 35);
             this.textBox1.TabIndex = 18;
             this.textBox1.Text = "Поиск...";
             this.textBox1.ToolTip.Size = new System.Drawing.Size(6, 7);
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // userlistBox1
             // 
-            this.userlistBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
+            this.userlistBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
             this.userlistBox1.FormattingEnabled = true;
+            this.userlistBox1.ItemHeight = 25;
             this.userlistBox1.Location = new System.Drawing.Point(11, 59);
             this.userlistBox1.Name = "userlistBox1";
-            this.userlistBox1.Size = new System.Drawing.Size(152, 126);
-            this.userlistBox1.TabIndex = 19;
-            this.userlistBox1.ToolTip.Size = new System.Drawing.Size(6, 7);
+            this.userlistBox1.Size = new System.Drawing.Size(152, 129);
+            this.userlistBox1.TabIndex = 21;
             // 
             // EditAccounForm
             // 
@@ -260,6 +263,6 @@
         private RsDesign.Controls.STD.RsTextBox passwordtextBox2;
         private RsDesign.Controls.STD.RsComboBox rolecomboBox1;
         private RsDesign.Controls.STD.RsTextBox textBox1;
-        private RsDesign.Controls.STD.RsListBox userlistBox1;
+        private System.Windows.Forms.ListBox userlistBox1;
     }
 }

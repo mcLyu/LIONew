@@ -45,12 +45,12 @@ namespace MasterLIO.Forms
 
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Программа 'Клавиатурный тренажер' предназначена для обучения пользователей 'слепому' методу печати на клавиатуре. Доступны упражнения, включающие различные зоны клавиатуры, ограничивающие пользователя во времени и количестве ошибок. Ведется пользовательская статистика, доступная для просмотра. В режиме администратора позволяется создавать упражнения.","О программе");
+            //MessageBox.Show("Программа 'Клавиатурный тренажер' предназначена для обучения пользователей 'слепому' методу печати на клавиатуре. Доступны упражнения, включающие различные зоны клавиатуры, ограничивающие пользователя во времени и количестве ошибок. Ведется пользовательская статистика, доступная для просмотра. В режиме администратора позволяется создавать упражнения.","О программе");
         }
 
         private void оСоздателяхToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Разработчиками программы 'Клавиатурный тренажер' являются студенты группы 6413 университета СНИУ: \n-Любайкин И.В.\n-Иванов А.Г.\n-Отрешко А.А.\n", "О создателях");
+           
         }
 
         private void rsButton1_Click(object sender, EventArgs e)
@@ -76,6 +76,17 @@ namespace MasterLIO.Forms
         private void rsButton5_Click(object sender, EventArgs e)
         {
             FormUtils.OpenFormAndSaveHierarchy(this, FormsFactory.GetExercisePickerForm()); 
+        }
+
+        private void справкаToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void оСоздателяхToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Разработчиками программы 'Клавиатурный тренажер' являются студенты группы 6413 Б300 университета СГАУ: \n-Любайкин И.В.\n-Иванов А.Г.\n-Отрешко А.А.\n", "О создателях");
+       
         }
     }
 }
