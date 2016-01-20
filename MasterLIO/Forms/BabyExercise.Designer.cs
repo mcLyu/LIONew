@@ -94,7 +94,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(16, 271);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(793, 215);
+            this.pictureBox1.Size = new System.Drawing.Size(757, 215);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -123,6 +123,7 @@
             this.Letter5.Size = new System.Drawing.Size(151, 146);
             this.Letter5.TabIndex = 19;
             this.Letter5.Text = "A";
+            this.Letter5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Letter4
             // 
@@ -135,6 +136,7 @@
             this.Letter4.Size = new System.Drawing.Size(151, 146);
             this.Letter4.TabIndex = 16;
             this.Letter4.Text = "A";
+            this.Letter4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Letter2
             // 
@@ -147,6 +149,7 @@
             this.Letter2.Size = new System.Drawing.Size(151, 146);
             this.Letter2.TabIndex = 18;
             this.Letter2.Text = "A";
+            this.Letter2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Letter3
             // 
@@ -159,6 +162,7 @@
             this.Letter3.Size = new System.Drawing.Size(151, 146);
             this.Letter3.TabIndex = 17;
             this.Letter3.Text = "A";
+            this.Letter3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Letter1
             // 
@@ -171,6 +175,7 @@
             this.Letter1.Size = new System.Drawing.Size(151, 146);
             this.Letter1.TabIndex = 15;
             this.Letter1.Text = "A";
+            this.Letter1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
